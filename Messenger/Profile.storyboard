@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" id="Y6W-OH-hqX" customClass="ProfileViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duj-cu-2cN" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя пользователя" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-2k-MLY">
+                                        <rect key="frame" x="174" y="69" width="189" height="53"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="CustomBlueLight"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DPm-2k-MLY" secondAttribute="trailing" constant="30" id="CTJ-24-zI5"/>
+                                    <constraint firstAttribute="bottom" secondItem="DPm-2k-MLY" secondAttribute="bottom" constant="8" id="H8i-4G-kFT"/>
+                                    <constraint firstAttribute="height" constant="130" id="LDJ-ER-fFj"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-PN-ccr">
+                                <rect key="frame" x="30" y="256" width="143" height="21"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOT-P5-SLv">
+                                <rect key="frame" x="57" y="309" width="306" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYO-x0-guw">
+                                <rect key="frame" x="29.999999999999993" y="360" width="114.33333333333331" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ru" translatesAutoresizingMaskIntoConstraints="NO" id="OXb-eH-lzE" userLabel="FlagOfCountry">
+                                <rect key="frame" x="30" y="309" width="19" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Fi1-g7-LU5"/>
+                                    <constraint firstAttribute="width" constant="19" id="txg-f4-147"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Знак зодиака" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzW-f8-jxF">
+                                <rect key="frame" x="160.33333333333334" y="360" width="99.666666666666657" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-po-hvO" userLabel="Bio">
+                                <rect key="frame" x="30" y="395" width="333" height="407"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="au" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-8a-wCv" userLabel="Avatar">
+                                <rect key="frame" x="30" y="69" width="120" height="120"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="8Mc-mN-CQt"/>
+                                    <constraint firstAttribute="height" constant="120" id="peA-oS-tvd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-zB-5Pu">
+                                <rect key="frame" x="221.33333333333337" y="153.66666666666666" width="155" height="35.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Редактировать">
+                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="CustomBlue"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eJE-6l-sxf"/>
+                                    <segue destination="PbW-tz-sce" kind="show" id="pPE-Nz-aa7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Никнейм" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEn-bi-Vha">
+                                <rect key="frame" x="30" y="213" width="66.666666666666671" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lYO-x0-guw" firstAttribute="top" secondItem="OXb-eH-lzE" secondAttribute="bottom" constant="32" id="3G7-uv-Pma"/>
+                            <constraint firstItem="duj-cu-2cN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="3o3-wn-ijn"/>
+                            <constraint firstItem="SOT-P5-SLv" firstAttribute="top" secondItem="OXb-eH-lzE" secondAttribute="top" id="6ps-WY-Sbf"/>
+                            <constraint firstItem="DPm-2k-MLY" firstAttribute="top" secondItem="kBB-8a-wCv" secondAttribute="top" id="B4v-B3-mBF"/>
+                            <constraint firstItem="XEn-bi-Vha" firstAttribute="top" secondItem="kBB-8a-wCv" secondAttribute="bottom" constant="24" id="BG5-uY-0gb"/>
+                            <constraint firstItem="1e4-PN-ccr" firstAttribute="top" secondItem="XEn-bi-Vha" secondAttribute="bottom" constant="24" id="HcV-f3-HCy"/>
+                            <constraint firstItem="cXv-zB-5Pu" firstAttribute="bottom" secondItem="kBB-8a-wCv" secondAttribute="bottom" id="ITS-mZ-ok4"/>
+                            <constraint firstItem="SOT-P5-SLv" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="-13.333333333333371" id="IYL-N7-7tZ"/>
+                            <constraint firstItem="XEn-bi-Vha" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="leading" id="LWW-ix-rEY"/>
+                            <constraint firstItem="lYO-x0-guw" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="leading" id="MKM-py-AWs"/>
+                            <constraint firstItem="OXb-eH-lzE" firstAttribute="leading" secondItem="1e4-PN-ccr" secondAttribute="leading" id="Nc2-mj-tng"/>
+                            <constraint firstItem="duj-cu-2cN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PQP-yG-5uE"/>
+                            <constraint firstItem="vRK-po-hvO" firstAttribute="top" secondItem="lYO-x0-guw" secondAttribute="bottom" constant="16" id="QZq-Rk-dvY"/>
+                            <constraint firstItem="KzW-f8-jxF" firstAttribute="leading" secondItem="lYO-x0-guw" secondAttribute="trailing" constant="16" id="RL6-gO-uTY"/>
+                            <constraint firstItem="kBB-8a-wCv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="RVv-u3-M36"/>
+                            <constraint firstItem="KzW-f8-jxF" firstAttribute="top" secondItem="lYO-x0-guw" secondAttribute="top" id="UuU-56-UiZ"/>
+                            <constraint firstItem="SOT-P5-SLv" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="trailing" constant="8" symbolic="YES" id="XIr-hR-FXV"/>
+                            <constraint firstItem="DPm-2k-MLY" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="trailing" constant="24" id="aTB-8g-wUG"/>
+                            <constraint firstItem="1e4-PN-ccr" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="leading" id="crj-fw-p3n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="16.666666666666629" id="l8C-Wy-SZs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vRK-po-hvO" secondAttribute="bottom" constant="16" id="mgR-Ci-2RY"/>
+                            <constraint firstItem="duj-cu-2cN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pjO-A7-00m"/>
+                            <constraint firstItem="kBB-8a-wCv" firstAttribute="top" secondItem="duj-cu-2cN" secondAttribute="bottom" constant="-61" id="qnX-Dv-m15"/>
+                            <constraint firstItem="vRK-po-hvO" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="-13.333333333333371" id="riC-yy-sHA"/>
+                            <constraint firstItem="OXb-eH-lzE" firstAttribute="top" secondItem="1e4-PN-ccr" secondAttribute="bottom" constant="32" id="vHL-rd-2vZ"/>
+                            <constraint firstItem="vRK-po-hvO" firstAttribute="leading" secondItem="lYO-x0-guw" secondAttribute="leading" id="yf6-P8-Ymk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImage" destination="kBB-8a-wCv" id="Qpo-b5-3mZ"/>
+                        <outlet property="bioTextView" destination="vRK-po-hvO" id="iAQ-1F-m4e"/>
+                        <outlet property="cityName" destination="SOT-P5-SLv" id="Z7m-MB-cDV"/>
+                        <outlet property="dateOfBirth" destination="lYO-x0-guw" id="Ogw-pG-Zyp"/>
+                        <outlet property="editButtonOutlet" destination="cXv-zB-5Pu" id="IGG-ef-ggQ"/>
+                        <outlet property="imageOfFlag" destination="OXb-eH-lzE" id="YQ4-dD-xMr"/>
+                        <outlet property="nickName" destination="XEn-bi-Vha" id="uOu-Yy-WJC"/>
+                        <outlet property="zodiacSign" destination="KzW-f8-jxF" id="yC1-eR-HKp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.625954198473281" y="-27.464788732394368"/>
+        </scene>
+        <!--EditProfileVC-->
+        <scene sceneID="sh7-nD-Nh3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditProfile" referencedIdentifier="EditProfileVC" id="PbW-tz-sce" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bSc-Ks-4zK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sD3-Ml-0pM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="au" width="512" height="512"/>
+        <image name="ru" width="512" height="512"/>
+        <namedColor name="CustomBlue">
+            <color red="0.11400000005960464" green="0.62699997425079346" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomBlueLight">
+            <color red="0.44299998879432678" green="0.78799998760223389" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

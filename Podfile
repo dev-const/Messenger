@@ -8,5 +8,6 @@ target 'Messenger' do
   # Pods for Messenger
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'Alamofire'
 
 end

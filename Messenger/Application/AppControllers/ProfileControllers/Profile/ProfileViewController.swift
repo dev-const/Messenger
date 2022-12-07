@@ -4,7 +4,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var avatarImage: UIImageView! {
         didSet {
-            avatarImage.layer.cornerRadius = 59.0
+            avatarImage.layer.cornerRadius = avatarImage.bounds.width/2
             avatarImage.clipsToBounds = true
             avatarImage.layer.borderWidth = 4.0
             avatarImage.layer.borderColor = UIColor.white.cgColor
@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var imageOfFlag: UIImageView! {
         didSet {
-            imageOfFlag.layer.cornerRadius = 10.0
+            imageOfFlag.layer.cornerRadius = imageOfFlag.bounds.width/2
             imageOfFlag.clipsToBounds = true
             imageOfFlag.contentMode = .scaleAspectFill
         }

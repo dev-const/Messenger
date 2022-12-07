@@ -4,7 +4,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var avatarImage: UIImageView! {
         didSet {
-            avatarImage.layer.cornerRadius = 59.0
+            avatarImage.layer.cornerRadius = avatarImage.bounds.width/2
             avatarImage.clipsToBounds = true
             avatarImage.contentMode = .scaleAspectFill
             avatarImage.layer.borderWidth = 4.0
@@ -14,7 +14,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var saveButtonOutlet: UIButton! {
         didSet {
-            self.saveButtonOutlet.layer.cornerRadius = 15.0
+            saveButtonOutlet.layer.cornerRadius = 15.0
         }
     }
     
@@ -22,7 +22,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var imageOfFlag: UIImageView! {
         didSet {
-            imageOfFlag.layer.cornerRadius = 16.0
+            imageOfFlag.layer.cornerRadius = imageOfFlag.bounds.width/2
             imageOfFlag.clipsToBounds = true
             imageOfFlag.contentMode = .scaleAspectFill
         }

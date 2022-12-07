@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Black.ttf">
+            <string>Roboto-Black</string>
+        </array>
         <array key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
         </array>
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-yj-PDI">
-                                <rect key="frame" x="30" y="394.33333333333331" width="315" height="36.333333333333314"/>
+                                <rect key="frame" x="30" y="395" width="315" height="35"/>
                                 <color key="backgroundColor" name="CustomBlue"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ4-iy-Dg2">
-                                <rect key="frame" x="30" y="446.66666666666669" width="315" height="36.333333333333314"/>
+                                <rect key="frame" x="30" y="446" width="315" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -53,14 +53,14 @@
                                     <segue destination="9g2-eq-Pyv" kind="show" id="h3d-ki-Wei"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-Pc-nH0">
-                                <rect key="frame" x="30" y="77" width="130" height="41.333333333333343"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messenger" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-Pc-nH0">
+                                <rect key="frame" x="30" y="77" width="177" height="41.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приглашай собеседников и скорее начинай общение!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-Wo-72f">
-                                <rect key="frame" x="30" y="139.33333333333334" width="315" height="91.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!                                   Приглашай собеседников и скорее начинай общение!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-Wo-72f">
+                                <rect key="frame" x="30" y="139.33333333333334" width="315" height="122.00000000000003"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,6 +83,7 @@
                             <constraint firstItem="tJ4-iy-Dg2" firstAttribute="leading" secondItem="vUx-yj-PDI" secondAttribute="leading" id="vmu-ja-fG8"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gTb-Og-bSK"/>
                     <connections>
                         <outlet property="logInButtonOutlet" destination="tJ4-iy-Dg2" id="p90-fC-MJT"/>
                         <outlet property="signUpButtonOutlet" destination="vUx-yj-PDI" id="Dkx-Lo-zEt"/>
@@ -90,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.799999999999997" y="3.6945812807881775"/>
+            <point key="canvasLocation" x="1007.2" y="3.6945812807881775"/>
         </scene>
         <!--RegistrationVC-->
         <scene sceneID="Kw1-SR-Ug9">
@@ -100,7 +101,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVW-bK-mmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-92"/>
+            <point key="canvasLocation" x="1671.2" y="-92.364532019704441"/>
         </scene>
         <!--AuthorizationVC-->
         <scene sceneID="ARo-jZ-c8I">
@@ -110,7 +111,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKS-Ex-6NF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="82"/>
+            <point key="canvasLocation" x="1676" y="81.2807881773399"/>
         </scene>
     </scenes>
     <resources>

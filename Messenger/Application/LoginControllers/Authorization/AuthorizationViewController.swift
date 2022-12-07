@@ -6,7 +6,7 @@ class AuthorizationViewController: UIViewController {
     
     @IBOutlet weak var imageOfFlag: UIImageView! {
         didSet {
-            imageOfFlag.layer.cornerRadius = 10.0
+            imageOfFlag.layer.cornerRadius = imageOfFlag.bounds.width/2
             imageOfFlag.clipsToBounds = true
             imageOfFlag.contentMode = .scaleAspectFill
         }
@@ -34,7 +34,10 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        phoneNumberTFOutlet.delegate = self
+        userNameTFOutlet.delegate = self
+        codeTFOutlet.delegate = self
+        
     }
     
     @IBAction func userNameTFAction(_ sender: UITextField) {
@@ -50,5 +53,17 @@ class AuthorizationViewController: UIViewController {
     }
     
     @IBAction func logInButtonAction(_ sender: UIButton) {
+    }
+}
+
+
+//MARK: UITextFieldDelegate
+
+extension AuthorizationViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let fullString = (textField.text ?? "") + string
+        textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
+        return false
     }
 }

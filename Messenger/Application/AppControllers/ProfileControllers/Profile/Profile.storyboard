@@ -19,9 +19,12 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Item-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" id="Y6W-OH-hqX" customClass="ProfileViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,15 +56,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOT-P5-SLv">
-                                <rect key="frame" x="57" y="309" width="306" height="19"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="84" y="309" width="265.66666666666669" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYO-x0-guw">
-                                <rect key="frame" x="29.999999999999993" y="360" width="114.33333333333331" height="19"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="57.000000000000007" y="352" width="116.66666666666669" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ru" translatesAutoresizingMaskIntoConstraints="NO" id="OXb-eH-lzE" userLabel="FlagOfCountry">
@@ -72,13 +75,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Знак зодиака" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzW-f8-jxF">
-                                <rect key="frame" x="160.33333333333334" y="360" width="99.666666666666657" height="19"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="189.66666666666666" y="352" width="101.66666666666666" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-po-hvO" userLabel="Bio">
-                                <rect key="frame" x="30" y="395" width="333" height="407"/>
+                                <rect key="frame" x="30" y="387" width="319.66666666666669" height="366"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -94,7 +97,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-zB-5Pu">
-                                <rect key="frame" x="221.33333333333337" y="153.66666666666666" width="155" height="35.333333333333343"/>
+                                <rect key="frame" x="208" y="153.66666666666666" width="155" height="35.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Редактировать">
                                     <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
@@ -106,43 +109,64 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Никнейм" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEn-bi-Vha">
-                                <rect key="frame" x="30" y="213" width="66.666666666666671" height="19"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="30.000000000000007" y="213" width="68.666666666666686" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-1P-fsC">
+                                <rect key="frame" x="30" y="353.66666666666669" width="19" height="16.000000000000057"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="LcV-kD-z0A"/>
+                                    <constraint firstAttribute="width" constant="19" id="nde-7y-79M"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wAP-0G-rPE">
+                                <rect key="frame" x="57" y="309" width="19" height="19"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="AOz-Dg-v3x"/>
+                                    <constraint firstAttribute="height" constant="19" id="Cdc-yu-kNj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lYO-x0-guw" firstAttribute="top" secondItem="OXb-eH-lzE" secondAttribute="bottom" constant="32" id="3G7-uv-Pma"/>
+                            <constraint firstItem="wAP-0G-rPE" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="trailing" constant="8" id="0ZV-Ed-f9Y"/>
                             <constraint firstItem="duj-cu-2cN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="3o3-wn-ijn"/>
+                            <constraint firstItem="vRK-po-hvO" firstAttribute="leading" secondItem="EmQ-1P-fsC" secondAttribute="leading" id="53p-YB-Ea6"/>
                             <constraint firstItem="SOT-P5-SLv" firstAttribute="top" secondItem="OXb-eH-lzE" secondAttribute="top" id="6ps-WY-Sbf"/>
                             <constraint firstItem="DPm-2k-MLY" firstAttribute="top" secondItem="kBB-8a-wCv" secondAttribute="top" id="B4v-B3-mBF"/>
                             <constraint firstItem="XEn-bi-Vha" firstAttribute="top" secondItem="kBB-8a-wCv" secondAttribute="bottom" constant="24" id="BG5-uY-0gb"/>
+                            <constraint firstItem="SOT-P5-SLv" firstAttribute="leading" secondItem="wAP-0G-rPE" secondAttribute="trailing" constant="8" id="DJH-n2-oAV"/>
                             <constraint firstItem="1e4-PN-ccr" firstAttribute="top" secondItem="XEn-bi-Vha" secondAttribute="bottom" constant="24" id="HcV-f3-HCy"/>
                             <constraint firstItem="cXv-zB-5Pu" firstAttribute="bottom" secondItem="kBB-8a-wCv" secondAttribute="bottom" id="ITS-mZ-ok4"/>
                             <constraint firstItem="SOT-P5-SLv" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="-13.333333333333371" id="IYL-N7-7tZ"/>
                             <constraint firstItem="XEn-bi-Vha" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="leading" id="LWW-ix-rEY"/>
-                            <constraint firstItem="lYO-x0-guw" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="leading" id="MKM-py-AWs"/>
                             <constraint firstItem="OXb-eH-lzE" firstAttribute="leading" secondItem="1e4-PN-ccr" secondAttribute="leading" id="Nc2-mj-tng"/>
                             <constraint firstItem="duj-cu-2cN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PQP-yG-5uE"/>
                             <constraint firstItem="vRK-po-hvO" firstAttribute="top" secondItem="lYO-x0-guw" secondAttribute="bottom" constant="16" id="QZq-Rk-dvY"/>
                             <constraint firstItem="KzW-f8-jxF" firstAttribute="leading" secondItem="lYO-x0-guw" secondAttribute="trailing" constant="16" id="RL6-gO-uTY"/>
                             <constraint firstItem="kBB-8a-wCv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="RVv-u3-M36"/>
                             <constraint firstItem="KzW-f8-jxF" firstAttribute="top" secondItem="lYO-x0-guw" secondAttribute="top" id="UuU-56-UiZ"/>
-                            <constraint firstItem="SOT-P5-SLv" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="trailing" constant="8" symbolic="YES" id="XIr-hR-FXV"/>
                             <constraint firstItem="DPm-2k-MLY" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="trailing" constant="24" id="aTB-8g-wUG"/>
+                            <constraint firstItem="cXv-zB-5Pu" firstAttribute="trailing" secondItem="DPm-2k-MLY" secondAttribute="trailing" id="b3P-Y7-8sl"/>
                             <constraint firstItem="1e4-PN-ccr" firstAttribute="leading" secondItem="kBB-8a-wCv" secondAttribute="leading" id="crj-fw-p3n"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="16.666666666666629" id="l8C-Wy-SZs"/>
+                            <constraint firstItem="lYO-x0-guw" firstAttribute="leading" secondItem="EmQ-1P-fsC" secondAttribute="trailing" constant="8" id="iVN-RU-P2o"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vRK-po-hvO" secondAttribute="bottom" constant="16" id="mgR-Ci-2RY"/>
                             <constraint firstItem="duj-cu-2cN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pjO-A7-00m"/>
                             <constraint firstItem="kBB-8a-wCv" firstAttribute="top" secondItem="duj-cu-2cN" secondAttribute="bottom" constant="-61" id="qnX-Dv-m15"/>
                             <constraint firstItem="vRK-po-hvO" firstAttribute="trailing" secondItem="cXv-zB-5Pu" secondAttribute="trailing" constant="-13.333333333333371" id="riC-yy-sHA"/>
+                            <constraint firstItem="EmQ-1P-fsC" firstAttribute="leading" secondItem="OXb-eH-lzE" secondAttribute="leading" id="tNy-sZ-1d9"/>
                             <constraint firstItem="OXb-eH-lzE" firstAttribute="top" secondItem="1e4-PN-ccr" secondAttribute="bottom" constant="32" id="vHL-rd-2vZ"/>
-                            <constraint firstItem="vRK-po-hvO" firstAttribute="leading" secondItem="lYO-x0-guw" secondAttribute="leading" id="yf6-P8-Ymk"/>
+                            <constraint firstItem="EmQ-1P-fsC" firstAttribute="top" secondItem="OXb-eH-lzE" secondAttribute="bottom" constant="24" id="ygQ-t0-99X"/>
+                            <constraint firstItem="lYO-x0-guw" firstAttribute="top" secondItem="EmQ-1P-fsC" secondAttribute="top" id="zRP-aO-onQ"/>
+                            <constraint firstItem="wAP-0G-rPE" firstAttribute="centerY" secondItem="OXb-eH-lzE" secondAttribute="centerY" id="zz5-rN-LME"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZTC-pt-mTb"/>
                     <connections>
                         <outlet property="avatarImage" destination="kBB-8a-wCv" id="Qpo-b5-3mZ"/>
                         <outlet property="bioTextView" destination="vRK-po-hvO" id="iAQ-1F-m4e"/>
@@ -156,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78.625954198473281" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1005.3435114503816" y="-27.464788732394368"/>
         </scene>
         <!--EditProfileVC-->
         <scene sceneID="sh7-nD-Nh3">
@@ -166,11 +190,30 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD3-Ml-0pM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="21"/>
+            <point key="canvasLocation" x="1622.9007633587785" y="20.422535211267608"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sqR-fS-suU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NA5-D8-UfS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ZR-0Q-dmX">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="xEJ-1P-RwM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3u2-fD-Eq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.625954198473281" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
         <image name="au" width="512" height="512"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="mappin.and.ellipse" catalog="system" width="117" height="128"/>
         <image name="ru" width="512" height="512"/>
         <namedColor name="CustomBlue">
             <color red="0.11400000005960464" green="0.62699997425079346" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

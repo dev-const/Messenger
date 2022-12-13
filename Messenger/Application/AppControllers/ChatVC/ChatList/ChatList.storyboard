@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,24 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-38-DBq">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oH-nv-CXx">
+                                <rect key="frame" x="151" y="341" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="obX-eC-lAQ"/>
+                                    <constraint firstAttribute="width" constant="34" id="zDN-Ic-FPq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <imageReference key="image" image="graduationcap.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MK4-38-DBq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IM7-Gg-Lo9"/>
-                            <constraint firstItem="MK4-38-DBq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="e3B-ue-bzu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MK4-38-DBq" secondAttribute="trailing" id="i2p-JP-Tci"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MK4-38-DBq" secondAttribute="bottom" id="nPy-rG-rpe"/>
+                            <constraint firstItem="5oH-nv-CXx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="151" id="OgU-HS-bv4"/>
+                            <constraint firstItem="5oH-nv-CXx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="282" id="iZM-I6-0vj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="cd3-2K-GaR"/>
-                    <connections>
-                        <outlet property="tableView" destination="MK4-38-DBq" id="lOT-Rl-eWW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +50,7 @@
                 <tabBarController storyboardIdentifier="ChatTabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="J8V-qE-wcC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hM6-Cg-hMs">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -59,6 +64,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

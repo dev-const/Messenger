@@ -23,12 +23,14 @@
 		B51F47772940BD1E00BE0016 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47762940BD1E00BE0016 /* Entity.swift */; };
 		B51F477A2940C0AF00BE0016 /* RegRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47792940C0AF00BE0016 /* RegRouterInput.swift */; };
 		B51F477E29410F0500BE0016 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F477D29410F0500BE0016 /* Extensions.swift */; };
+		B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F4780294878FE00BE0016 /* CustomElements.swift */; };
+		B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F478229488E0C00BE0016 /* SupportConstants.swift */; };
+		B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47872948D82F00BE0016 /* VerificationViewController.swift */; };
 		B57CC4FE293F9410000AAE7E /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57CC4FD293F9410000AAE7E /* ChatList.storyboard */; };
 		B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */; };
 		B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D44F293F1D2E00198385 /* AppDelegate.swift */; };
 		B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D451293F1D2E00198385 /* SceneDelegate.swift */; };
-		B589D454293F1D2E00198385 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D453293F1D2E00198385 /* ViewController.swift */; };
-		B589D457293F1D2E00198385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B589D455293F1D2E00198385 /* Main.storyboard */; };
+		B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D453293F1D2E00198385 /* WelcomeViewController.swift */; };
 		B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */; };
 		B589D45C293F1D3000198385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B589D45B293F1D3000198385 /* Assets.xcassets */; };
 		B589D45F293F1D3000198385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B589D45D293F1D3000198385 /* LaunchScreen.storyboard */; };
@@ -38,8 +40,6 @@
 		B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */; };
 		B589D6A9293F6BAC00A0EEF2 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */; };
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
-		B5F277C0293F47C000397A29 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F277BF293F47C000397A29 /* Registration.storyboard */; };
-		B5F277C2293F47D100397A29 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F277C1293F47D100397A29 /* Authorization.storyboard */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
 		B5F9AF94293F3A8000A056F5 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF88293F3A8000A056F5 /* Roboto-Italic.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
@@ -73,13 +73,15 @@
 		B51F47762940BD1E00BE0016 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		B51F47792940C0AF00BE0016 /* RegRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouterInput.swift; sourceTree = "<group>"; };
 		B51F477D29410F0500BE0016 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B51F4780294878FE00BE0016 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
+		B51F478229488E0C00BE0016 /* SupportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportConstants.swift; sourceTree = "<group>"; };
+		B51F47872948D82F00BE0016 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		B57CC4FD293F9410000AAE7E /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
 		B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		B589D44C293F1D2E00198385 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B589D44F293F1D2E00198385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B589D451293F1D2E00198385 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B589D453293F1D2E00198385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B589D456293F1D2E00198385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B589D453293F1D2E00198385 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B589D459293F1D2E00198385 /* Messenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Messenger.xcdatamodel; sourceTree = "<group>"; };
 		B589D45B293F1D3000198385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B589D45E293F1D3000198385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,8 +92,6 @@
 		B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		B5F277BF293F47C000397A29 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		B5F277C1293F47D100397A29 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B5F9AF88293F3A8000A056F5 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -137,21 +137,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B51F475129407B3800BE0016 /* Chat */ = {
+		B51F475129407B3800BE0016 /* ChatVC */ = {
 			isa = PBXGroup;
 			children = (
 				B51F475E294087E500BE0016 /* ChatList */,
 				B51F47632940881A00BE0016 /* Chat */,
 			);
-			path = Chat;
+			path = ChatVC;
 			sourceTree = "<group>";
 		};
 		B51F47562940849400BE0016 /* LoginControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B51F475B294085A200BE0016 /* MainController */,
-				B51F475C294085BB00BE0016 /* Registration */,
-				B51F475D294085CC00BE0016 /* Authorization */,
+				B51F475B294085A200BE0016 /* WelcomeVC */,
+				B51F475C294085BB00BE0016 /* RegistrationVC */,
+				B51F475D294085CC00BE0016 /* AuthorizationVC */,
 			);
 			path = LoginControllers;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 		B51F4757294084D500BE0016 /* AppControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B51F475129407B3800BE0016 /* Chat */,
+				B51F475129407B3800BE0016 /* ChatVC */,
 				B51F47582940852500BE0016 /* ProfileControllers */,
 			);
 			path = AppControllers;
@@ -168,40 +168,39 @@
 		B51F47582940852500BE0016 /* ProfileControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B51F47592940853B00BE0016 /* Profile */,
-				B51F475A2940854400BE0016 /* EdirProfile */,
+				B51F47592940853B00BE0016 /* ProfileVC */,
+				B51F475A2940854400BE0016 /* EdirProfileVC */,
 			);
 			path = ProfileControllers;
 			sourceTree = "<group>";
 		};
-		B51F47592940853B00BE0016 /* Profile */ = {
+		B51F47592940853B00BE0016 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
 				B51140C9293F53080093EB88 /* Profile.storyboard */,
 				B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */,
 			);
-			path = Profile;
+			path = ProfileVC;
 			sourceTree = "<group>";
 		};
-		B51F475A2940854400BE0016 /* EdirProfile */ = {
+		B51F475A2940854400BE0016 /* EdirProfileVC */ = {
 			isa = PBXGroup;
 			children = (
 				B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */,
 				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
 			);
-			path = EdirProfile;
+			path = EdirProfileVC;
 			sourceTree = "<group>";
 		};
-		B51F475B294085A200BE0016 /* MainController */ = {
+		B51F475B294085A200BE0016 /* WelcomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				B589D455293F1D2E00198385 /* Main.storyboard */,
-				B589D453293F1D2E00198385 /* ViewController.swift */,
+				B589D453293F1D2E00198385 /* WelcomeViewController.swift */,
 			);
-			path = MainController;
+			path = WelcomeVC;
 			sourceTree = "<group>";
 		};
-		B51F475C294085BB00BE0016 /* Registration */ = {
+		B51F475C294085BB00BE0016 /* RegistrationVC */ = {
 			isa = PBXGroup;
 			children = (
 				B51F47642940BACB00BE0016 /* View */,
@@ -210,16 +209,16 @@
 				B51F47752940BCD600BE0016 /* Router */,
 				B51F47782940BD2800BE0016 /* Entity */,
 			);
-			path = Registration;
+			path = RegistrationVC;
 			sourceTree = "<group>";
 		};
-		B51F475D294085CC00BE0016 /* Authorization */ = {
+		B51F475D294085CC00BE0016 /* AuthorizationVC */ = {
 			isa = PBXGroup;
 			children = (
-				B5F277C1293F47D100397A29 /* Authorization.storyboard */,
 				B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */,
+				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
 			);
-			path = Authorization;
+			path = AuthorizationVC;
 			sourceTree = "<group>";
 		};
 		B51F475E294087E500BE0016 /* ChatList */ = {
@@ -245,7 +244,6 @@
 		B51F47642940BACB00BE0016 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B5F277BF293F47C000397A29 /* Registration.storyboard */,
 				B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */,
 				B51F47652940BBAB00BE0016 /* RegViewInput.swift */,
 				B51F47672940BBC200BE0016 /* RegViewOutput.swift */,
@@ -296,6 +294,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B51F47842948909300BE0016 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B51F4780294878FE00BE0016 /* CustomElements.swift */,
+				B51F478229488E0C00BE0016 /* SupportConstants.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		B589D443293F1D2E00198385 = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +337,7 @@
 			children = (
 				B589D44F293F1D2E00198385 /* AppDelegate.swift */,
 				B589D451293F1D2E00198385 /* SceneDelegate.swift */,
+				B51F47842948909300BE0016 /* SupportFiles */,
 				B51F477F29410F0D00BE0016 /* Extensions */,
 				B589D45D293F1D3000198385 /* LaunchScreen.storyboard */,
 				B51F47562940849400BE0016 /* LoginControllers */,
@@ -441,20 +449,17 @@
 				B5F9AF9A293F3A8000A056F5 /* Roboto-MediumItalic.ttf in Resources */,
 				B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */,
 				B5F9AF9E293F3A8000A056F5 /* Roboto-Black.ttf in Resources */,
-				B5F277C2293F47D100397A29 /* Authorization.storyboard in Resources */,
 				B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */,
 				B589D45F293F1D3000198385 /* LaunchScreen.storyboard in Resources */,
 				B5F9AF9D293F3A8000A056F5 /* Roboto-BlackItalic.ttf in Resources */,
 				B51F47622940881200BE0016 /* Chat.storyboard in Resources */,
 				B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */,
 				B5F9AF9B293F3A8000A056F5 /* Roboto-Regular.ttf in Resources */,
-				B5F277C0293F47C000397A29 /* Registration.storyboard in Resources */,
 				B589D469293F279000198385 /* GoogleService-Info.plist in Resources */,
 				B5F9AF99293F3A8000A056F5 /* Roboto-Medium.ttf in Resources */,
 				B589D6A9293F6BAC00A0EEF2 /* EditProfile.storyboard in Resources */,
 				B5F9AF94293F3A8000A056F5 /* Roboto-Italic.ttf in Resources */,
 				B589D45C293F1D3000198385 /* Assets.xcassets in Resources */,
-				B589D457293F1D2E00198385 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,20 +515,23 @@
 				B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */,
 				B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */,
 				B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */,
+				B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */,
 				B51F4760294087F900BE0016 /* Chat.swift in Sources */,
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
-				B589D454293F1D2E00198385 /* ViewController.swift in Sources */,
+				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
 				B51F47702940BC8800BE0016 /* RegInteractorInput.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
+				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
 				B51F475029407A5000BE0016 /* ChatVC.swift in Sources */,
 				B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */,
 				B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */,
 				B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */,
 				B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */,
 				B51F475529407B5A00BE0016 /* Model.swift in Sources */,
+				B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */,
 				B51F47772940BD1E00BE0016 /* Entity.swift in Sources */,
 				B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */,
 				B51F477A2940C0AF00BE0016 /* RegRouterInput.swift in Sources */,
@@ -535,14 +543,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B589D455293F1D2E00198385 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B589D456293F1D2E00198385 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B589D45D293F1D3000198385 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -681,7 +681,7 @@
 				INFOPLIST_FILE = Messenger/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -713,7 +713,7 @@
 				INFOPLIST_FILE = Messenger/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

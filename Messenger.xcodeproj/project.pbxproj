@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B51140CA293F53080093EB88 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51140C9293F53080093EB88 /* Profile.storyboard */; };
 		B51F474E2940766900BE0016 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = B51F474D2940766900BE0016 /* MessageKit */; };
 		B51F475029407A5000BE0016 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F474F29407A5000BE0016 /* ChatVC.swift */; };
 		B51F475529407B5A00BE0016 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475429407B5A00BE0016 /* Model.swift */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		1ED054A9180B3DCBB95FEF54 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BF6FB84D85E5AFCEB379BF /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
-		B51140C9293F53080093EB88 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B51F474F29407A5000BE0016 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		B51F475429407B5A00BE0016 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B51F475F294087F900BE0016 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 		B51F47592940853B00BE0016 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				B51140C9293F53080093EB88 /* Profile.storyboard */,
 				B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */,
 			);
 			path = ProfileVC;
@@ -443,7 +440,6 @@
 			files = (
 				B57CC4FE293F9410000AAE7E /* ChatList.storyboard in Resources */,
 				B5F9AF9C293F3A8000A056F5 /* Roboto-ThinItalic.ttf in Resources */,
-				B51140CA293F53080093EB88 /* Profile.storyboard in Resources */,
 				B5F9AF96293F3A8000A056F5 /* Roboto-BoldItalic.ttf in Resources */,
 				B5F9AF98293F3A8000A056F5 /* Roboto-LightItalic.ttf in Resources */,
 				B5F9AF9A293F3A8000A056F5 /* Roboto-MediumItalic.ttf in Resources */,

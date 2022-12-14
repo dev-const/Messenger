@@ -24,4 +24,5 @@ enum CustomColor: String {
     case Blue        = "CustomBlue"
     case BlueLight   = "CustomBlueLight"
     case VioletLight = "CustomVioletLight"
+    case Green       = "CustomGreen"
 }

@@ -32,7 +32,7 @@ final class WelcomeViewController: UIViewController {
         return button
     }()
     
-    //MARK: View Did Load
+    //MARK: ViewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()

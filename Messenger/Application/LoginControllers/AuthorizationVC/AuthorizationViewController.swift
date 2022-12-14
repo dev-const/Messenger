@@ -68,7 +68,9 @@ final class AuthorizationViewController: UIViewController {
         let button = CustomButton(style: ButtonStyle.white, title: "Далее")
         return button
     }()
-        
+    
+    //MARK: ViewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -125,7 +127,7 @@ extension AuthorizationViewController {
             userNameTF.leadingAnchor.constraint(equalTo: promptLabel.leadingAnchor),
             userNameTF.trailingAnchor.constraint(equalTo: closeButton.trailingAnchor),
             
-            incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 0),
+            incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 2),
             incorrectUserNameLabel.leadingAnchor.constraint(equalTo: userNameTF.leadingAnchor),
             incorrectUserNameLabel.trailingAnchor.constraint(equalTo: userNameTF.trailingAnchor),
             

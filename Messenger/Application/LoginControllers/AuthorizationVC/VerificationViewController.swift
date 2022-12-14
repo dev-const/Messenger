@@ -2,18 +2,7 @@ import UIKit
 
 final class VerificationViewController: UIViewController {
     
-    //    private let codeTF: UITextField = {
-    //        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
-    //        let textField = UITextField(frame: frame)
-    //        textField.borderStyle = .roundedRect
-    //        textField.placeholder = "Код подтверждения"
-    //        textField.textAlignment = .center
-    //        textField.font = UIFont(name: CustomFont.RobotoBold.rawValue, size: 24)
-    //        textField.returnKeyType = .done
-    //        textField.textContentType = .telephoneNumber
-    //        textField.keyboardType = .numberPad
-    //        return textField
-    //    }()
+    private var isSuccess: Bool?
     
     //MARK: Create UI objects
     
@@ -34,32 +23,64 @@ final class VerificationViewController: UIViewController {
     }()
     
     private let verificationCode: CustomLabel = {
-        let label = CustomLabel(font: CustomFont.RobotoBold.rawValue, fontSize: 16, numberOfLines: 1)
+        let label = CustomLabel(font: CustomFont.RobotoRegular.rawValue, fontSize: 16, numberOfLines: 1)
         label.text = "КОД ВЕРИФИКАЦИИ"
         return label
     }()
     
-    private let oneTimeCode: OneTimeTextField = {
+    private let oneTimeCode: CustomOneTimeTextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
-        let textField = OneTimeTextField(coder: .init())
-        textField.text = "133337"
+        let textField = CustomOneTimeTextField()
         return textField
     }()
+    
+    private let incorrectCodeLabel: CustomLabel = {
+        let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
+        label.text = "Неверный код. Введите - 133337"
+        label.textAlignment = .left
+        label.textColor = .red
+        label.isHidden = true
+        return label
+    }()
+    
+    private let okButton: CustomButton = {
+        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
+        let button = CustomButton(style: ButtonStyle.blue, title: "Готово")
+        return button
+    }()
+    
+    
+    //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createConstraints()
         view.backgroundColor = .white
-        //        codeTF.delegate = self
         
+        oneTimeCode.configure()
+        oneTimeCode.didEnterLastDigit = { [weak self] code in
+            if code != "133337" {
+                print("Wrong code")
+                self?.incorrectCodeLabel.isHidden = false
+            } else {
+                self?.isSuccess = true
+                self?.incorrectCodeLabel.text = "Правильный код"
+                self?.incorrectCodeLabel.textColor = UIColor(named: CustomColor.Green.rawValue)
+                print("Right code")
+            }
+        }
+        okButton.addTarget(self, action: #selector(okButtonDidPress), for: .touchUpInside)
+    }
+    
+    @objc
+    private func okButtonDidPress() {
+        guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
+        print("User successfully logged in")
+        //Go to next - ChatVC
+        //UserDefaults
     }
     
     
-    
-    
-}
-
-extension VerificationViewController: UITextFieldDelegate {
     
 }
 
@@ -72,11 +93,15 @@ extension VerificationViewController {
         view.addSubview(promptLabel)
         view.addSubview(verificationCode)
         view.addSubview(oneTimeCode)
+        view.addSubview(incorrectCodeLabel)
+        view.addSubview(okButton)
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
         verificationCode.translatesAutoresizingMaskIntoConstraints = false
         oneTimeCode.translatesAutoresizingMaskIntoConstraints = false
+        incorrectCodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        okButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -86,13 +111,22 @@ extension VerificationViewController {
             promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-            verificationCode.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 35),
-            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            verificationCode.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
             
-            oneTimeCode.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            oneTimeCode.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            oneTimeCode.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            oneTimeCode.topAnchor.constraint(equalTo: verificationCode.bottomAnchor, constant: 5),
+            oneTimeCode.leadingAnchor.constraint(equalTo: verificationCode.leadingAnchor),
+            oneTimeCode.trailingAnchor.constraint(equalTo: verificationCode.trailingAnchor),
+            oneTimeCode.heightAnchor.constraint(equalToConstant: 40),
+            
+            incorrectCodeLabel.topAnchor.constraint(equalTo: oneTimeCode.bottomAnchor, constant: 2),
+            incorrectCodeLabel.leadingAnchor.constraint(equalTo: oneTimeCode.leadingAnchor),
+            incorrectCodeLabel.trailingAnchor.constraint(equalTo: oneTimeCode.trailingAnchor),
+            
+            okButton.topAnchor.constraint(equalTo: incorrectCodeLabel.bottomAnchor, constant: 35),
+            okButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            okButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-30)
         ])
     }
 }

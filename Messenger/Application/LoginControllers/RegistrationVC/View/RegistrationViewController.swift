@@ -80,7 +80,8 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         return label
     }()
 
-    
+    //MARK: ViewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createConstraints()
@@ -139,14 +140,14 @@ extension RegistrationViewController {
             userNameTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             userNameTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-            incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 0),
+            incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 2),
             incorrectUserNameLabel.leadingAnchor.constraint(equalTo: userNameTF.leadingAnchor),
             
             phoneNumberTF.topAnchor.constraint(equalTo: incorrectUserNameLabel.bottomAnchor, constant: 5),
             phoneNumberTF.leadingAnchor.constraint(equalTo: incorrectUserNameLabel.leadingAnchor),
             phoneNumberTF.trailingAnchor.constraint(equalTo: userNameTF.trailingAnchor),
             
-            incorrectPhoneNumberLabel.topAnchor.constraint(equalTo: phoneNumberTF.bottomAnchor, constant: 0),
+            incorrectPhoneNumberLabel.topAnchor.constraint(equalTo: phoneNumberTF.bottomAnchor, constant: 2),
             incorrectPhoneNumberLabel.leadingAnchor.constraint(equalTo: phoneNumberTF.leadingAnchor),
             
             signInButton.topAnchor.constraint(equalTo: incorrectPhoneNumberLabel.bottomAnchor, constant: 35),

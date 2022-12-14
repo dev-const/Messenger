@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if isLogin {
             self.window?.rootViewController = ChatListViewController()
         } else {
-            self.window?.rootViewController = VerificationViewController()
+            self.window?.rootViewController = ProfileViewController()
 //            self.window?.rootViewController = WelcomeViewController()
         }
         self.window?.makeKeyAndVisible()

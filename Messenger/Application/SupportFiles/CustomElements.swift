@@ -104,8 +104,9 @@ class CustomOneTimeTextField: UITextField {
             label.textAlignment = .center
             label.backgroundColor = .white
             label.layer.borderColor = UIColor(named: CustomColor.BlueLight.rawValue)?.cgColor
-            label.layer.borderWidth = 1.0
-            label.font = .systemFont(ofSize: 30)
+            label.layer.borderWidth = 4.0
+            label.layer.cornerRadius = 16
+            label.font = UIFont(name: CustomFont.RobotoBold.rawValue, size: 28)
             label.isUserInteractionEnabled = true
             
             stackView.addArrangedSubview(label)
@@ -146,5 +147,22 @@ extension CustomOneTimeTextField: UITextFieldDelegate {
                    replacementString string: String) -> Bool {
         guard let characterCount = textField.text?.count else { return false }
         return characterCount < digitLabels.count || string == ""
+    }
+}
+
+
+// MARK: Custom animation for the TextField on invalid code
+
+extension CustomOneTimeTextField {
+    
+    func shake() {
+        let shakeAnimation = CABasicAnimation(keyPath: "position")
+        shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 3, y: center.y))
+        shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: center.x + 3, y: center.y))
+        shakeAnimation.duration = 0.05
+        shakeAnimation.repeatCount = 5
+        shakeAnimation.autoreverses = true
+        
+        layer.add(shakeAnimation, forKey: "position")
     }
 }

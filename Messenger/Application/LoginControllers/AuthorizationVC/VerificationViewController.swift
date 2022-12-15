@@ -18,12 +18,13 @@ final class VerificationViewController: UIViewController {
     
     private let promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
-        label.text = "Введите полученный код для верификации номера"
+        label.text = "Последний шаг. Введите полученный код для верификации номера"
+        label.alpha = 0
         return label
     }()
     
     private let verificationCode: CustomLabel = {
-        let label = CustomLabel(font: CustomFont.RobotoRegular.rawValue, fontSize: 16, numberOfLines: 1)
+        let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 16, numberOfLines: 1)
         label.text = "КОД ВЕРИФИКАЦИИ"
         return label
     }()
@@ -35,8 +36,8 @@ final class VerificationViewController: UIViewController {
     }()
     
     private let incorrectCodeLabel: CustomLabel = {
-        let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
-        label.text = "Неверный код. Введите - 133337"
+        let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 14, numberOfLines: 1)
+        label.text = "Неверный код. Для теста введите - 133337"
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
@@ -55,13 +56,19 @@ final class VerificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createConstraints()
+        oneTimeCode.delegate = self
         view.backgroundColor = .white
-        
+        oneTimeCode.layer.cornerRadius = oneTimeCode.frame.height/2
+
+        okButton.addTarget(self, action: #selector(okButtonDidPress), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backButtonDidPress), for: .touchUpInside)
+
         oneTimeCode.configure()
         oneTimeCode.didEnterLastDigit = { [weak self] code in
             if code != "133337" {
                 print("Wrong code")
                 self?.incorrectCodeLabel.isHidden = false
+                self?.oneTimeCode.shake()
             } else {
                 self?.isSuccess = true
                 self?.incorrectCodeLabel.text = "Правильный код"
@@ -69,7 +76,13 @@ final class VerificationViewController: UIViewController {
                 print("Right code")
             }
         }
-        okButton.addTarget(self, action: #selector(okButtonDidPress), for: .touchUpInside)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5) {
+            self.promptLabel.alpha = 1.0
+        }
     }
     
     @objc
@@ -77,11 +90,27 @@ final class VerificationViewController: UIViewController {
         guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
         print("User successfully logged in")
         //Go to next - ChatVC
-        //UserDefaults
+        //FIXME: UserDefaults
+    }
+    
+    @objc
+    private func backButtonDidPress() {
+        guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
+        print("BackButton did pressed")
+        //Go to back VC
     }
     
     
+}
+
+//MARK: UITextFieldDelegate
+
+extension VerificationViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
 }
 
 //MARK: Create constraints
@@ -112,13 +141,13 @@ extension VerificationViewController {
             promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
             verificationCode.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
-            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
             oneTimeCode.topAnchor.constraint(equalTo: verificationCode.bottomAnchor, constant: 5),
             oneTimeCode.leadingAnchor.constraint(equalTo: verificationCode.leadingAnchor),
             oneTimeCode.trailingAnchor.constraint(equalTo: verificationCode.trailingAnchor),
-            oneTimeCode.heightAnchor.constraint(equalToConstant: 40),
+            oneTimeCode.heightAnchor.constraint(equalToConstant: 60),
             
             incorrectCodeLabel.topAnchor.constraint(equalTo: oneTimeCode.bottomAnchor, constant: 2),
             incorrectCodeLabel.leadingAnchor.constraint(equalTo: oneTimeCode.leadingAnchor),

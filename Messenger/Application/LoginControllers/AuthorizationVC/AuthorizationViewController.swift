@@ -1,7 +1,7 @@
 import UIKit
 
 final class AuthorizationViewController: UIViewController {
-
+    
     //MARK: Create UI objects
     
     private let closeButton: UIButton = {
@@ -17,6 +17,7 @@ final class AuthorizationViewController: UIViewController {
     private let promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для входа в учетную запись"
+        label.alpha = 0
         return label
     }()
     
@@ -70,7 +71,7 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     //MARK: ViewDidLoad
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -78,7 +79,14 @@ final class AuthorizationViewController: UIViewController {
         phoneNumberTF.delegate = self
         userNameTF.delegate = self
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.7) {
+            self.promptLabel.alpha = 1.0
+        }
+    }
+    
 }
 
 
@@ -87,9 +95,18 @@ final class AuthorizationViewController: UIViewController {
 extension AuthorizationViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let fullString = (textField.text ?? "") + string
-        textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
-        return false
+        
+        if textField == phoneNumberTF {
+            let fullString = (textField.text ?? "") + string
+            textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -145,3 +162,4 @@ extension AuthorizationViewController {
         ])
     }
 }
+

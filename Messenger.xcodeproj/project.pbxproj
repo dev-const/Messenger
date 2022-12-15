@@ -11,7 +11,6 @@
 		B51F475029407A5000BE0016 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F474F29407A5000BE0016 /* ChatVC.swift */; };
 		B51F475529407B5A00BE0016 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475429407B5A00BE0016 /* Model.swift */; };
 		B51F4760294087F900BE0016 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475F294087F900BE0016 /* Chat.swift */; };
-		B51F47622940881200BE0016 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51F47612940881200BE0016 /* Chat.storyboard */; };
 		B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47652940BBAB00BE0016 /* RegViewInput.swift */; };
 		B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47672940BBC200BE0016 /* RegViewOutput.swift */; };
 		B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47692940BC1700BE0016 /* RegPresenter.swift */; };
@@ -25,7 +24,8 @@
 		B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F4780294878FE00BE0016 /* CustomElements.swift */; };
 		B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F478229488E0C00BE0016 /* SupportConstants.swift */; };
 		B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47872948D82F00BE0016 /* VerificationViewController.swift */; };
-		B57CC4FE293F9410000AAE7E /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57CC4FD293F9410000AAE7E /* ChatList.storyboard */; };
+		B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5443962294B2F5400201C2B /* FirebaseManager.swift */; };
+		B5443966294B30F800201C2B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5443965294B30F800201C2B /* Document.swift */; };
 		B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */; };
 		B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D44F293F1D2E00198385 /* AppDelegate.swift */; };
 		B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D451293F1D2E00198385 /* SceneDelegate.swift */; };
@@ -33,23 +33,16 @@
 		B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */; };
 		B589D45C293F1D3000198385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B589D45B293F1D3000198385 /* Assets.xcassets */; };
 		B589D45F293F1D3000198385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B589D45D293F1D3000198385 /* LaunchScreen.storyboard */; };
-		B589D469293F279000198385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B589D468293F279000198385 /* GoogleService-Info.plist */; };
 		B589D6A3293F6B1E00A0EEF2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */; };
 		B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */; };
 		B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */; };
-		B589D6A9293F6BAC00A0EEF2 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */; };
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
+		B59863C3294B28520061E5A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59863C2294B28520061E5A8 /* GoogleService-Info.plist */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
-		B5F9AF94293F3A8000A056F5 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF88293F3A8000A056F5 /* Roboto-Italic.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
-		B5F9AF96293F3A8000A056F5 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8A293F3A8000A056F5 /* Roboto-BoldItalic.ttf */; };
 		B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */; };
-		B5F9AF98293F3A8000A056F5 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8C293F3A8000A056F5 /* Roboto-LightItalic.ttf */; };
 		B5F9AF99293F3A8000A056F5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8D293F3A8000A056F5 /* Roboto-Medium.ttf */; };
-		B5F9AF9A293F3A8000A056F5 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8E293F3A8000A056F5 /* Roboto-MediumItalic.ttf */; };
 		B5F9AF9B293F3A8000A056F5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8F293F3A8000A056F5 /* Roboto-Regular.ttf */; };
-		B5F9AF9C293F3A8000A056F5 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF90293F3A8000A056F5 /* Roboto-ThinItalic.ttf */; };
-		B5F9AF9D293F3A8000A056F5 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF91293F3A8000A056F5 /* Roboto-BlackItalic.ttf */; };
 		B5F9AF9E293F3A8000A056F5 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF92293F3A8000A056F5 /* Roboto-Black.ttf */; };
 		EF5026AC317E454299CFF366 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED054A9180B3DCBB95FEF54 /* Pods_Messenger.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +53,6 @@
 		B51F474F29407A5000BE0016 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		B51F475429407B5A00BE0016 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B51F475F294087F900BE0016 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		B51F47612940881200BE0016 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		B51F47652940BBAB00BE0016 /* RegViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewInput.swift; sourceTree = "<group>"; };
 		B51F47672940BBC200BE0016 /* RegViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewOutput.swift; sourceTree = "<group>"; };
 		B51F47692940BC1700BE0016 /* RegPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPresenter.swift; sourceTree = "<group>"; };
@@ -74,7 +66,8 @@
 		B51F4780294878FE00BE0016 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 		B51F478229488E0C00BE0016 /* SupportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportConstants.swift; sourceTree = "<group>"; };
 		B51F47872948D82F00BE0016 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
-		B57CC4FD293F9410000AAE7E /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
+		B5443962294B2F5400201C2B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		B5443965294B30F800201C2B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		B589D44C293F1D2E00198385 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B589D44F293F1D2E00198385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,23 +77,16 @@
 		B589D45B293F1D3000198385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B589D45E293F1D3000198385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B589D460293F1D3000198385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B589D468293F279000198385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		B59863C2294B28520061E5A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
-		B5F9AF88293F3A8000A056F5 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		B5F9AF8A293F3A8000A056F5 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		B5F9AF8C293F3A8000A056F5 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		B5F9AF8D293F3A8000A056F5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		B5F9AF8E293F3A8000A056F5 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		B5F9AF8F293F3A8000A056F5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		B5F9AF90293F3A8000A056F5 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		B5F9AF91293F3A8000A056F5 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "../../../../../Downloads/Roboto/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		B5F9AF92293F3A8000A056F5 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		E33EA175352E77EBAC617E83 /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +169,6 @@
 		B51F475A2940854400BE0016 /* EdirProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				B589D6A8293F6BAC00A0EEF2 /* EditProfile.storyboard */,
 				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
 			);
 			path = EdirProfileVC;
@@ -221,7 +206,6 @@
 		B51F475E294087E500BE0016 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				B57CC4FD293F9410000AAE7E /* ChatList.storyboard */,
 				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
 				B51F474F29407A5000BE0016 /* ChatVC.swift */,
 				B51F475429407B5A00BE0016 /* Model.swift */,
@@ -233,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				B51F475F294087F900BE0016 /* Chat.swift */,
-				B51F47612940881200BE0016 /* Chat.storyboard */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -300,6 +283,15 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		B5443964294B2F6000201C2B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B5443962294B2F5400201C2B /* FirebaseManager.swift */,
+				B5443965294B30F800201C2B /* Document.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B589D443293F1D2E00198385 = {
 			isa = PBXGroup;
 			children = (
@@ -321,10 +313,11 @@
 		B589D44E293F1D2E00198385 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				B59863C2294B28520061E5A8 /* GoogleService-Info.plist */,
+				B5443964294B2F6000201C2B /* Managers */,
 				B589D467293F1DC300198385 /* Resources */,
 				B589D466293F1D9F00198385 /* Application */,
 				B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */,
-				B589D468293F279000198385 /* GoogleService-Info.plist */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -357,17 +350,11 @@
 			isa = PBXGroup;
 			children = (
 				B5F9AF92293F3A8000A056F5 /* Roboto-Black.ttf */,
-				B5F9AF91293F3A8000A056F5 /* Roboto-BlackItalic.ttf */,
 				B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */,
-				B5F9AF8A293F3A8000A056F5 /* Roboto-BoldItalic.ttf */,
-				B5F9AF88293F3A8000A056F5 /* Roboto-Italic.ttf */,
 				B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */,
-				B5F9AF8C293F3A8000A056F5 /* Roboto-LightItalic.ttf */,
 				B5F9AF8D293F3A8000A056F5 /* Roboto-Medium.ttf */,
-				B5F9AF8E293F3A8000A056F5 /* Roboto-MediumItalic.ttf */,
 				B5F9AF8F293F3A8000A056F5 /* Roboto-Regular.ttf */,
 				B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */,
-				B5F9AF90293F3A8000A056F5 /* Roboto-ThinItalic.ttf */,
 			);
 			path = "Fonts-Roboto";
 			sourceTree = "<group>";
@@ -438,23 +425,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57CC4FE293F9410000AAE7E /* ChatList.storyboard in Resources */,
-				B5F9AF9C293F3A8000A056F5 /* Roboto-ThinItalic.ttf in Resources */,
-				B5F9AF96293F3A8000A056F5 /* Roboto-BoldItalic.ttf in Resources */,
-				B5F9AF98293F3A8000A056F5 /* Roboto-LightItalic.ttf in Resources */,
-				B5F9AF9A293F3A8000A056F5 /* Roboto-MediumItalic.ttf in Resources */,
 				B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */,
 				B5F9AF9E293F3A8000A056F5 /* Roboto-Black.ttf in Resources */,
+				B59863C3294B28520061E5A8 /* GoogleService-Info.plist in Resources */,
 				B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */,
 				B589D45F293F1D3000198385 /* LaunchScreen.storyboard in Resources */,
-				B5F9AF9D293F3A8000A056F5 /* Roboto-BlackItalic.ttf in Resources */,
-				B51F47622940881200BE0016 /* Chat.storyboard in Resources */,
 				B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */,
 				B5F9AF9B293F3A8000A056F5 /* Roboto-Regular.ttf in Resources */,
-				B589D469293F279000198385 /* GoogleService-Info.plist in Resources */,
 				B5F9AF99293F3A8000A056F5 /* Roboto-Medium.ttf in Resources */,
-				B589D6A9293F6BAC00A0EEF2 /* EditProfile.storyboard in Resources */,
-				B5F9AF94293F3A8000A056F5 /* Roboto-Italic.ttf in Resources */,
 				B589D45C293F1D3000198385 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */,
 				B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */,
 				B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */,
 				B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */,
@@ -521,6 +500,7 @@
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
 				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
+				B5443966294B30F800201C2B /* Document.swift in Sources */,
 				B51F475029407A5000BE0016 /* ChatVC.swift in Sources */,
 				B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */,
 				B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */,
@@ -600,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -654,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -675,6 +655,8 @@
 				DEVELOPMENT_TEAM = W87MFURSJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Messenger;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -707,6 +689,8 @@
 				DEVELOPMENT_TEAM = W87MFURSJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Messenger;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

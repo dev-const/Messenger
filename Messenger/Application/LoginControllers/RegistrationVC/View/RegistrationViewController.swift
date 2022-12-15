@@ -20,6 +20,7 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для получения доступа"
         label.textAlignment = .left
+        label.alpha = 0
         return label
     }()
     
@@ -27,13 +28,13 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.borderStyle = .roundedRect
-        textField.placeholder = "Имя пользователя"
+        textField.placeholder = "Имя пользователя (max - 16 символов)"
         textField.textAlignment = .left
         textField.textContentType = .name
         textField.autocapitalizationType = .words
         textField.autocorrectionType = .yes
         textField.returnKeyType = .next
-        textField.keyboardType = .phonePad
+        textField.keyboardType = .default
         return textField
     }()
     
@@ -77,30 +78,57 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         label.text = "Регистрируясь, вы соглашаетесь с условиями использования и политикой конфиденциальности, включая использование файлов cookie. Другие пользователи смогут найти вас по номеру телефона, если он предоставлен."
         label.textColor = .darkGray
         label.textAlignment = .left
+        label.alpha = 0
         return label
     }()
-
+    
+//    private var tapGest : UITapGestureRecognizer?
+    
     //MARK: ViewDidLoad
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tapGest = UITapGestureRecognizer(target: self, action: #selector(tapToMainView))
         createConstraints()
         view.backgroundColor = .white
         userNameTF.delegate = self
         phoneNumberTF.delegate = self
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1.0) {
+            self.promptLabel.alpha = 1.0
+            self.licenseAgreementLabel.alpha = 1.0
+        }
+    }
+    
+//    @objc
+//    func tapToMainView() {
+//        self.view.endEditing(true)
+//    }
+    
 }
 
 //MARK: UITextFieldDelegate
 
 extension RegistrationViewController: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let fullString = (textField.text ?? "") + string
-        textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
-        return false
+        
+        if textField == phoneNumberTF {
+            let fullString = (textField.text ?? "") + string
+            textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
+            return false
+        }
+        
+        return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
 }
 
 //MARK: Create constraints

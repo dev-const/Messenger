@@ -11,7 +11,7 @@ final class ProfileViewController: UIViewController {
         return  view
     }()
     
-    private let userName: CustomLabel = {
+    private let userNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoBold.rawValue, fontSize: 20, numberOfLines: 2)
         label.textColor = .white
         label.textAlignment = .left
@@ -83,7 +83,7 @@ final class ProfileViewController: UIViewController {
     
     private let zodiacImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 20, height: 20))
-       let imageView = UIImageView(frame: frame)
+        let imageView = UIImageView(frame: frame)
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "Близнецы")
         imageView.tintColor = .lightGray
@@ -92,13 +92,13 @@ final class ProfileViewController: UIViewController {
     
     private let bioTextView: UITextView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
-       let textView = UITextView(frame: frame)
+        let textView = UITextView(frame: frame)
         textView.isEditable = false
         textView.isScrollEnabled = true
         textView.contentMode = .left
         textView.showsVerticalScrollIndicator = false
-        textView.text = "О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         textView.font = UIFont(name: CustomFont.RobotoLight.rawValue, size: 16)
+        textView.text = "О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.О себе Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         return textView
     }()
     
@@ -123,7 +123,7 @@ extension ProfileViewController {
     private func createConstraints() {
         
         view.addSubview(topView)
-        view.addSubview(userName)
+        view.addSubview(userNameLabel)
         view.addSubview(avatarImageView)
         view.addSubview(editButton)
         view.addSubview(nickNameLabel)
@@ -136,7 +136,7 @@ extension ProfileViewController {
         view.addSubview(bioTextView)
         
         topView.translatesAutoresizingMaskIntoConstraints = false
-        userName.translatesAutoresizingMaskIntoConstraints = false
+        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         editButton.translatesAutoresizingMaskIntoConstraints = false
         nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -154,9 +154,9 @@ extension ProfileViewController {
             topView.widthAnchor.constraint(equalTo: view.widthAnchor),
             topView.heightAnchor.constraint(equalToConstant: 130),
             
-            userName.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -8),
-            userName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            userName.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            userNameLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -8),
+            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            userNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             
             avatarImageView.heightAnchor.constraint(equalToConstant: 120),
             avatarImageView.widthAnchor.constraint(equalToConstant: 120),
@@ -164,8 +164,8 @@ extension ProfileViewController {
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
             editButton.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
-            editButton.leadingAnchor.constraint(equalTo: userName.leadingAnchor),
-            editButton.trailingAnchor.constraint(equalTo: userName.trailingAnchor),
+            editButton.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
+            editButton.trailingAnchor.constraint(equalTo: userNameLabel.trailingAnchor),
             
             nickNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 24),
             nickNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
@@ -175,7 +175,7 @@ extension ProfileViewController {
             
             mapPinImageView.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 24),
             mapPinImageView.leadingAnchor.constraint(equalTo: phoneNumberLabel.leadingAnchor),
-         
+            
             cityNameLabel.topAnchor.constraint(equalTo: mapPinImageView.topAnchor),
             cityNameLabel.leadingAnchor.constraint(equalTo: mapPinImageView.trailingAnchor, constant: 8),
             

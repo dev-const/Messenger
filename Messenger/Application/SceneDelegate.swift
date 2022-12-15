@@ -10,12 +10,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        var isLogin = userDefaults.object(forKey: "isLogin") as? Bool ?? false
+        let isLogin = userDefaults.object(forKey: "isLogin") as? Bool ?? false
         
         if isLogin {
             self.window?.rootViewController = ChatListViewController()
         } else {
-            self.window?.rootViewController = ProfileViewController()
+                self.window?.rootViewController = EditProfileViewController()
 //            self.window?.rootViewController = WelcomeViewController()
         }
         self.window?.makeKeyAndVisible()

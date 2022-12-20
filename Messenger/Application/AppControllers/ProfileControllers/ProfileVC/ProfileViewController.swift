@@ -106,7 +106,7 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createConstraints()
+        setConstraints()
         editButton.addTarget(self, action: #selector(editButtonPressed), for: .touchUpInside)
     }
     
@@ -120,7 +120,7 @@ final class ProfileViewController: UIViewController {
 
 extension ProfileViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         
         view.addSubview(topView)
         view.addSubview(userNameLabel)

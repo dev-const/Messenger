@@ -38,6 +38,11 @@
 		B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */; };
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
 		B59863C3294B28520061E5A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59863C2294B28520061E5A8 /* GoogleService-Info.plist */; };
+		B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */; };
+		B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */; };
+		B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */; };
+		B5D6F8FD2951B016008BDD60 /* WelcomeOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */; };
+		B5D6F8FF2951B2A5008BDD60 /* WelcomeRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
 		B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */; };
@@ -82,6 +87,11 @@
 		B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B59863C2294B28520061E5A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInputProtocol.swift; sourceTree = "<group>"; };
+		B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOutputProtocol.swift; sourceTree = "<group>"; };
+		B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouterInput.swift; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -177,7 +187,9 @@
 		B51F475B294085A200BE0016 /* WelcomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				B589D453293F1D2E00198385 /* WelcomeViewController.swift */,
+				B5D6F8F92951AFE0008BDD60 /* View */,
+				B5D6F8F82951AFBC008BDD60 /* Presenter */,
+				B5D6F8F72951AFB2008BDD60 /* Router */,
 			);
 			path = WelcomeVC;
 			sourceTree = "<group>";
@@ -346,6 +358,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B5D6F8F72951AFB2008BDD60 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */,
+				B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B5D6F8F82951AFBC008BDD60 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B5D6F8F92951AFE0008BDD60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B589D453293F1D2E00198385 /* WelcomeViewController.swift */,
+				B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */,
+				B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B5F9AF86293F3A4D00A056F5 /* Fonts-Roboto */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +527,7 @@
 			files = (
 				B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */,
 				B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */,
+				B5D6F8FD2951B016008BDD60 /* WelcomeOutputProtocol.swift in Sources */,
 				B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */,
 				B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */,
 				B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */,
@@ -495,13 +535,17 @@
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
 				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
+				B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */,
 				B51F47702940BC8800BE0016 /* RegInteractorInput.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
+				B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */,
+				B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */,
 				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
 				B5443966294B30F800201C2B /* Document.swift in Sources */,
 				B51F475029407A5000BE0016 /* ChatVC.swift in Sources */,
+				B5D6F8FF2951B2A5008BDD60 /* WelcomeRouterInput.swift in Sources */,
 				B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */,
 				B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */,
 				B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */,

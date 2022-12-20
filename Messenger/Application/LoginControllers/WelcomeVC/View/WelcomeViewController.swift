@@ -1,7 +1,9 @@
 import UIKit
 
-final class WelcomeViewController: UIViewController {
-
+final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
+    
+    var presenter: WelcomeViewOutputProtocol!
+    
     //MARK: Create UI objects
     
     private let messengerLabel: CustomLabel = {
@@ -39,7 +41,7 @@ final class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createConstraints()
+        setConstraints()
         view.backgroundColor = .white
         
         signUpButton.addTarget(self, action: #selector(openRegVC), for: .touchUpInside)
@@ -60,11 +62,11 @@ final class WelcomeViewController: UIViewController {
         }
     }
     
-    @objc private func openRegVC() {
+    @objc func openRegVC() {
 
     }
     
-    @objc private func openAuthVC() {
+    @objc func openAuthVC() {
 
     }
 }
@@ -73,7 +75,7 @@ final class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         
         view.addSubview(messengerLabel)
         view.addSubview(greetingLabel)

@@ -134,7 +134,7 @@ final class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createConstraints()
+        setConstraints()
         createNotifications()
         nickNameTextField.delegate = self
         cityNameTextField.delegate = self
@@ -237,7 +237,7 @@ extension EditProfileViewController: UITextViewDelegate{
 
 extension EditProfileViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         
         view.addSubview(topView)
         view.addSubview(backButton)

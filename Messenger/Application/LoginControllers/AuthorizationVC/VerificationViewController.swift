@@ -55,7 +55,7 @@ final class VerificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createConstraints()
+        setConstraints()
         oneTimeCode.delegate = self
         view.backgroundColor = .white
         oneTimeCode.layer.cornerRadius = oneTimeCode.frame.height/2
@@ -117,7 +117,7 @@ extension VerificationViewController: UITextFieldDelegate {
 
 extension VerificationViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         view.addSubview(backButton)
         view.addSubview(promptLabel)
         view.addSubview(verificationCode)

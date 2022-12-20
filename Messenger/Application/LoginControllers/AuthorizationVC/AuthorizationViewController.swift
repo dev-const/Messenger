@@ -75,7 +75,7 @@ final class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        createConstraints()
+        setConstraints()
         phoneNumberTF.delegate = self
         userNameTF.delegate = self
     }
@@ -114,7 +114,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
 
 extension AuthorizationViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         
         view.addSubview(closeButton)
         view.addSubview(promptLabel)

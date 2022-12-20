@@ -82,17 +82,17 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         return label
     }()
     
-//    private var tapGest : UITapGestureRecognizer?
-    
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tapGest = UITapGestureRecognizer(target: self, action: #selector(tapToMainView))
-        createConstraints()
+
+        setConstraints()
         view.backgroundColor = .white
         userNameTF.delegate = self
         phoneNumberTF.delegate = self
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,10 +103,11 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         }
     }
     
-//    @objc
-//    func tapToMainView() {
-//        self.view.endEditing(true)
-//    }
+    //MARK: Settings keyboard
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
     
 }
 
@@ -121,12 +122,11 @@ extension RegistrationViewController: UITextFieldDelegate {
             textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
             return false
         }
-        
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
+//            textField.resignFirstResponder()
             return true
         }
 }
@@ -135,7 +135,7 @@ extension RegistrationViewController: UITextFieldDelegate {
 
 extension RegistrationViewController {
     
-    private func createConstraints() {
+    private func setConstraints() {
         
         view.addSubview(closeButton)
         view.addSubview(promptLabel)

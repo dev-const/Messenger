@@ -11,6 +11,10 @@ final class RegInteractor {
 
 
 extension RegInteractor: RegInteractorInput {
+    func obtainFormattedString(_ string: String) {
+
+     }
+    
     func changeStatusIsLogin(status: Bool) {
         UserDefaults().set(true, forKey: "isLogin")
     }

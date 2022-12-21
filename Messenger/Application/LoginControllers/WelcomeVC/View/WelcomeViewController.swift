@@ -63,11 +63,11 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     }
     
     @objc func openRegVC() {
-
+        presenter.openRegVC()
     }
     
     @objc func openAuthVC() {
-
+        presenter.openAuthVC()
     }
 }
 

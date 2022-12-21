@@ -5,6 +5,5 @@ protocol WelcomeViewOutputProtocol: AnyObject {
     var view: WelcomeViewInputProtocol! { get }
     var router: WelcomeRouterInputProtocol! { get }
     
-    func openRegVC()
-    func openAuthVC()
+    func openNextVC(_ viewController: UIViewController)
 }

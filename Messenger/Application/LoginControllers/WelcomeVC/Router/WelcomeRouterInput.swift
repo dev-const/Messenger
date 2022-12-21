@@ -1,6 +1,6 @@
-import Foundation
+import UIKit
 
 protocol WelcomeRouterInputProtocol: AnyObject {
     
-    func openNextVC()
+    func openNextVC(_ viewController: UIViewController)
 }

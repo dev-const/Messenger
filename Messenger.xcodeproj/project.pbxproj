@@ -171,7 +171,11 @@
 		B51F47592940853B00BE0016 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				B53FA853295345250069E067 /* View */,
 				B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */,
+				B53FA8542953455E0069E067 /* Presenter */,
+				B53FA8552953457D0069E067 /* Interactor */,
+				B53FA8562953458B0069E067 /* Router */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -179,7 +183,11 @@
 		B51F475A2940854400BE0016 /* EdirProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
+				B53FA857295345AF0069E067 /* View */,
+				B53FA85A295345CD0069E067 /* Router */,
+				B53FA859295345C40069E067 /* Interactor */,
+				B53FA858295345B60069E067 /* Presenter */,
+				B53FA85B295345F80069E067 /* Entity */,
 			);
 			path = EdirProfileVC;
 			sourceTree = "<group>";
@@ -209,8 +217,8 @@
 		B51F475D294085CC00BE0016 /* AuthorizationVC */ = {
 			isa = PBXGroup;
 			children = (
-				B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */,
-				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
+				B53FA84A295344250069E067 /* AuthorizationVC */,
+				B53FA8492953440B0069E067 /* VerificationVC */,
 			);
 			path = AuthorizationVC;
 			sourceTree = "<group>";
@@ -218,9 +226,11 @@
 		B51F475E294087E500BE0016 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
-				B51F474F29407A5000BE0016 /* ChatVC.swift */,
-				B51F475429407B5A00BE0016 /* Model.swift */,
+				B53FA862295346E30069E067 /* View */,
+				B53FA863295346ED0069E067 /* Presenter */,
+				B53FA864295346FA0069E067 /* Interactor */,
+				B53FA865295347060069E067 /* Router */,
+				B53FA861295346C70069E067 /* Enitity */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -228,7 +238,11 @@
 		B51F47632940881A00BE0016 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				B51F475F294087F900BE0016 /* Chat.swift */,
+				B53FA85C295346400069E067 /* View */,
+				B53FA85D2953464A0069E067 /* Presenter */,
+				B53FA85E295346570069E067 /* Interactor */,
+				B53FA8602953467F0069E067 /* Router */,
+				B53FA85F295346680069E067 /* Entity */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -295,6 +309,224 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		B53FA8492953440B0069E067 /* VerificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				B53FA84C2953444D0069E067 /* View */,
+			);
+			path = VerificationVC;
+			sourceTree = "<group>";
+		};
+		B53FA84A295344250069E067 /* AuthorizationVC */ = {
+			isa = PBXGroup;
+			children = (
+				B53FA84B295344420069E067 /* View */,
+			);
+			path = AuthorizationVC;
+			sourceTree = "<group>";
+		};
+		B53FA84B295344420069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */,
+				B53FA84D295344600069E067 /* Presenter */,
+				B53FA84F295344870069E067 /* Interactor */,
+				B53FA850295344970069E067 /* Router */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA84C2953444D0069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
+				B53FA84E295344770069E067 /* Presenter */,
+				B53FA851295344C90069E067 /* Interactor */,
+				B53FA852295344D40069E067 /* Router */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA84D295344600069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA84E295344770069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA84F295344870069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA850295344970069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B53FA851295344C90069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA852295344D40069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B53FA853295345250069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA8542953455E0069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA8552953457D0069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA8562953458B0069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B53FA857295345AF0069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA858295345B60069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA859295345C40069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA85A295345CD0069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B53FA85B295345F80069E067 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B53FA85C295346400069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B51F475F294087F900BE0016 /* Chat.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA85D2953464A0069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA85E295346570069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA85F295346680069E067 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B53FA8602953467F0069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B53FA861295346C70069E067 /* Enitity */ = {
+			isa = PBXGroup;
+			children = (
+				B51F475429407B5A00BE0016 /* Model.swift */,
+			);
+			path = Enitity;
+			sourceTree = "<group>";
+		};
+		B53FA862295346E30069E067 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
+				B51F474F29407A5000BE0016 /* ChatVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B53FA863295346ED0069E067 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B53FA864295346FA0069E067 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B53FA865295347060069E067 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		B5443964294B2F6000201C2B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +558,6 @@
 			isa = PBXGroup;
 			children = (
 				B59863C2294B28520061E5A8 /* GoogleService-Info.plist */,
-				B5443964294B2F6000201C2B /* Managers */,
 				B589D467293F1DC300198385 /* Resources */,
 				B589D466293F1D9F00198385 /* Application */,
 				B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */,
@@ -337,11 +568,12 @@
 		B589D466293F1D9F00198385 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B5443964294B2F6000201C2B /* Managers */,
 				B589D44F293F1D2E00198385 /* AppDelegate.swift */,
 				B589D451293F1D2E00198385 /* SceneDelegate.swift */,
+				B589D45D293F1D3000198385 /* LaunchScreen.storyboard */,
 				B51F47842948909300BE0016 /* SupportFiles */,
 				B51F477F29410F0D00BE0016 /* Extensions */,
-				B589D45D293F1D3000198385 /* LaunchScreen.storyboard */,
 				B51F47562940849400BE0016 /* LoginControllers */,
 				B51F4757294084D500BE0016 /* AppControllers */,
 			);

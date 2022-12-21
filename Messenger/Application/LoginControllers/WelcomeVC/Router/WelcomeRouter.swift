@@ -1,8 +1,9 @@
-import Foundation
+import UIKit
 
 final class WelcomeRouter: WelcomeRouterInputProtocol {
-   
-    func openNextVC() {
-        <#code#>
+    
+    func openNextVC(_ viewController: UIViewController) {
+        //open VC
+        let vc = viewController
     }
 }

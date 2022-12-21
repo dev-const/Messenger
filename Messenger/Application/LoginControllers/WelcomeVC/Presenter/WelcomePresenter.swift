@@ -1,15 +1,12 @@
-import Foundation
+import UIKit
 
 final class WelcomeViewPresenter: WelcomeViewOutputProtocol {
     
-    weak private var view: WelcomeViewInputProtocol!
-    private var router: WelcomeRouterInputProtocol!
+    weak var view: WelcomeViewInputProtocol!
+    var router: WelcomeRouterInputProtocol!
     
-    @objc func openRegVC() {
-        view.openRegVC()
+    @objc func openNextVC(_ viewController: UIViewController) {
+        router.openNextVC(viewController)
     }
-    
-    @objc func openAuthVC() {
-        view.openAuthVC()
-    }
+
 }

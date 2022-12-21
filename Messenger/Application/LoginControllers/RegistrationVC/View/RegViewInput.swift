@@ -2,7 +2,7 @@ import UIKit
 
 protocol RegViewInput: AnyObject {
     
-    func hideKeyboard()
+    var output: RegViewOutput! { get }
     
     //MARK: UITextFieldDelegate
 

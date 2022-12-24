@@ -21,7 +21,6 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для получения доступа"
         label.textAlignment = .left
-        label.alpha = 0
         return label
     }()
     
@@ -29,7 +28,6 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
         let imageView = CustomImageView(frame: frame)
         imageView.image = UIImage(named: "2-open-letter-envelope")
-        imageView.alpha = 0
         return imageView
     }()
     
@@ -54,7 +52,6 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
-        label.alpha = 0
         return label
     }()
     
@@ -77,13 +74,11 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
-        label.alpha = 0
         return label
     }()
     
     private lazy var signInButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.blue, title: "Зарегистрироваться")
-        button.alpha = 0
         return button
     }()
     
@@ -92,7 +87,6 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         label.text = "Регистрируясь, вы соглашаетесь с условиями использования и политикой конфиденциальности, включая использование файлов cookie. Другие пользователи смогут найти вас по номеру телефона, если он предоставлен."
         label.textColor = .darkGray
         label.textAlignment = .left
-        label.alpha = 0
         return label
     }()
     

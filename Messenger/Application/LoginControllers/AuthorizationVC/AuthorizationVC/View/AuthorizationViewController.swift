@@ -20,7 +20,6 @@ final class AuthorizationViewController: UIViewController, AuthViewInput {
     private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для входа в учетную запись"
-        label.alpha = 0
         return label
     }()
     
@@ -28,7 +27,6 @@ final class AuthorizationViewController: UIViewController, AuthViewInput {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
         let imageView = CustomImageView(frame: frame)
         imageView.image = UIImage(named: "3-envelope-in-the-air")
-        imageView.alpha = 0
         return imageView
     }()
     
@@ -53,7 +51,6 @@ final class AuthorizationViewController: UIViewController, AuthViewInput {
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
-        label.alpha = 0
         return label
     }()
     
@@ -76,13 +73,11 @@ final class AuthorizationViewController: UIViewController, AuthViewInput {
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
-        label.alpha = 0
         return label
     }()
     
     private lazy var nextButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.white, title: "Далее")
-        button.alpha = 0
         return button
     }()
     

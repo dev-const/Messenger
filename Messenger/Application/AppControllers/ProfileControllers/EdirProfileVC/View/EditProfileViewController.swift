@@ -149,6 +149,24 @@ final class EditProfileViewController: UIViewController {
 
     }
     
+    //MARK: Functions for target
+    
+    @objc
+    private func backButtonPressed() {
+        print("Back button did pressed")
+    }
+    
+    @objc
+    private func changePhotoButtonPressed() {
+        print("ChangePhoto button did pressed")
+        
+    }
+    
+    @objc
+    private func saveButtonPressed() {
+        print("Save button did pressed")
+    }
+    
     //MARK: Settings keyboard
     
     @objc private func hideKeyboard() {
@@ -189,24 +207,6 @@ final class EditProfileViewController: UIViewController {
         NotificationCenter.default.removeObserver(self,
                                                   name: UITextView.keyboardWillHideNotification,
                                                   object: nil)
-    }
-    
-    //MARK: Func for target
-    
-    @objc
-    private func backButtonPressed() {
-        print("Back button did pressed")
-    }
-    
-    @objc
-    private func changePhotoButtonPressed() {
-        print("ChangePhoto button did pressed")
-        
-    }
-    
-    @objc
-    private func saveButtonPressed() {
-        print("Save button did pressed")
     }
 }
 
@@ -275,16 +275,16 @@ extension EditProfileViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 180),
             avatarImageView.widthAnchor.constraint(equalToConstant: 180),
             avatarImageView.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: avatarImageView.bounds.height/2),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             
             backButton.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             backButton.heightAnchor.constraint(equalToConstant: 60),
             backButton.widthAnchor.constraint(equalToConstant: 60),
-            backButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -30),
+            backButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             saveButton.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
             saveButton.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             changePhotoButton.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -10),
             changePhotoButton.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
@@ -295,8 +295,8 @@ extension EditProfileViewController {
             nickNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             
             nickNameTextField.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor, constant: 8),
-            nickNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            nickNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            nickNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            nickNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             cityNameLabel.topAnchor.constraint(equalTo: nickNameTextField.bottomAnchor, constant: 24),
             cityNameLabel.leadingAnchor.constraint(equalTo: nickNameTextField.leadingAnchor),
@@ -311,7 +311,7 @@ extension EditProfileViewController {
             dateOfBirthNameLabel.trailingAnchor.constraint(equalTo: cityNameTextField.trailingAnchor),
             
             datePicker.topAnchor.constraint(equalTo: dateOfBirthNameLabel.topAnchor),
-            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             datePicker.heightAnchor.constraint(equalToConstant: 35),
             
             bioTextView.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 24),

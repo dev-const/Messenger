@@ -155,13 +155,13 @@ extension ProfileViewController {
             topView.heightAnchor.constraint(equalToConstant: 130),
             
             userNameLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -8),
-            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             userNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             
             avatarImageView.heightAnchor.constraint(equalToConstant: 120),
             avatarImageView.widthAnchor.constraint(equalToConstant: 120),
             avatarImageView.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: avatarImageView.bounds.height/2),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             
             editButton.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
             editButton.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
@@ -192,7 +192,7 @@ extension ProfileViewController {
             
             bioTextView.topAnchor.constraint(equalTo: calendarImageView.bottomAnchor, constant: 16),
             bioTextView.leadingAnchor.constraint(equalTo: calendarImageView.leadingAnchor),
-            bioTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            bioTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             bioTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
     }

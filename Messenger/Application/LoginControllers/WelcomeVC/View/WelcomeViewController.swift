@@ -10,21 +10,18 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     private lazy var messengerLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoBold.rawValue, fontSize: 35, numberOfLines: 1)
         label.text = "Messenger"
-        label.alpha = 0
         return label
     }()
     
     private lazy var greetingLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 1)
         label.text = "Привет!"
-        label.alpha = 0
         return label
     }()
     
     private lazy var callToActionLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Приглашай собеседников и скорее начинай общение!"
-        label.alpha = 0
         return label
     }()
     
@@ -37,13 +34,11 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     
     private lazy var signUpButton: CustomButton = {
         let button = CustomButton(style: .blue, title: "Зарегистрироваться")
-        button.alpha = 0
         return button
     }()
     
     private lazy var logInButton: CustomButton = {
         let button = CustomButton(style: .white, title: "Войти")
-        button.alpha = 0
         return button
     }()
     
@@ -52,7 +47,6 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
         label.text = "Messenger. \(Calendar.current.component(.year, from: Date())). Version \(versionApp)"
         label.textColor = .darkGray
         label.textAlignment = .center
-        label.alpha = 0
         return label
     }()
     

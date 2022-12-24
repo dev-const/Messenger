@@ -20,8 +20,6 @@ final class VerificationViewController: UIViewController {
     private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Последний шаг. Введите полученный код для верификации номера"
-        label.alpha = 0
-        label.alpha = 0
         return label
     }()
     
@@ -29,21 +27,18 @@ final class VerificationViewController: UIViewController {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
         let imageView = CustomImageView(frame: frame)
         imageView.image = UIImage(named: "4-opened-envelope")
-        imageView.alpha = 0
         return imageView
     }()
     
     private lazy var verificationCode: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 16, numberOfLines: 1)
         label.text = "КОД ВЕРИФИКАЦИИ"
-        label.alpha = 0
         return label
     }()
     
     private lazy var oneTimeCode: CustomOneTimeTextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let textField = CustomOneTimeTextField()
-        textField.alpha = 0
         return textField
     }()
     
@@ -53,14 +48,12 @@ final class VerificationViewController: UIViewController {
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
-        label.alpha = 0
         return label
     }()
     
     private lazy var okButton: CustomButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let button = CustomButton(style: ButtonStyle.blue, title: "Готово")
-        button.alpha = 0
         return button
     }()
     
@@ -110,7 +103,6 @@ final class VerificationViewController: UIViewController {
     
     @objc
     private func backButtonDidPress() {
-        guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
         animateForViewWillDisappear()
         print("BackButton did pressed")
         //Go to back VC

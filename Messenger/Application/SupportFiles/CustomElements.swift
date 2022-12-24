@@ -11,6 +11,7 @@ class CustomButton: UIButton {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont(name: CustomFont.RobotoBold.rawValue,
                                   size: 16)
+        alpha = 0
         
         switch style {
         case .white:
@@ -40,6 +41,7 @@ class CustomLabel: UILabel {
         super.init(frame: .zero)
         self.font = UIFont(name: font, size: fontSize)
         self.numberOfLines = numberOfLines
+        alpha = 0
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -104,6 +106,7 @@ class CustomOneTimeTextField: UITextField {
         textColor = .clear
         keyboardType = .numberPad
         textContentType = .oneTimeCode
+        alpha = 0
         
         addTarget(self, action: #selector(textDidChange),
                   for: .editingChanged)

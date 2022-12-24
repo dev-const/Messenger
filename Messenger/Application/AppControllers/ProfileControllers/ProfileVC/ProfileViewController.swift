@@ -4,14 +4,14 @@ final class ProfileViewController: UIViewController {
     
     //MARK: Create UI objects
     
-    private let topView: UIView = {
+    private lazy var topView: UIView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 130))
         let view = UIView(frame: frame)
         view.backgroundColor = UIColor(named: CustomColor.BlueLight.rawValue)
         return  view
     }()
     
-    private let userNameLabel: CustomLabel = {
+    private lazy var userNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoBold.rawValue, fontSize: 20, numberOfLines: 2)
         label.textColor = .white
         label.textAlignment = .left
@@ -19,7 +19,7 @@ final class ProfileViewController: UIViewController {
         return label
     }()
     
-    private let avatarImageView: UIImageView = {
+    private lazy var avatarImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 120, height: 120))
         let imageView = UIImageView(frame: frame)
         imageView.layer.cornerRadius = imageView.bounds.height/2
@@ -32,26 +32,26 @@ final class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let editButton: CustomButton = {
+    private lazy var editButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.white, title: "Редактировать")
         return button
     }()
     
-    private let nickNameLabel: CustomLabel = {
+    private lazy var nickNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoRegular.rawValue, fontSize: 16, numberOfLines: 1)
         label.textColor = .lightGray
         label.text = "Никнейм"
         return label
     }()
     
-    private let phoneNumberLabel: CustomLabel = {
+    private lazy var phoneNumberLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoBold.rawValue, fontSize: 18, numberOfLines: 1)
         label.textColor = .black
         label.text = "Номер телефона"
         return label
     }()
     
-    private let mapPinImageView: UIImageView = {
+    private lazy var mapPinImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 20, height: 20))
         let imageView = UIImageView(frame: frame)
         imageView.image = UIImage(systemName: "mappin.and.ellipse")
@@ -59,14 +59,14 @@ final class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let cityNameLabel: CustomLabel = {
+    private lazy var cityNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoRegular.rawValue, fontSize: 16, numberOfLines: 1)
         label.textColor = .lightGray
         label.text = "Город"
         return label
     }()
     
-    private let calendarImageView: UIImageView = {
+    private lazy var calendarImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 20, height: 20))
         let imageView = UIImageView(frame: frame)
         imageView.image = UIImage(systemName: "calendar")
@@ -74,14 +74,14 @@ final class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let dateOfBirthLabel: CustomLabel = {
+    private lazy var dateOfBirthLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoRegular.rawValue, fontSize: 16, numberOfLines: 1)
         label.textColor = .lightGray
         label.text = "Дата рождения"
         return label
     }()
     
-    private let zodiacImageView: UIImageView = {
+    private lazy var zodiacImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 20, height: 20))
         let imageView = UIImageView(frame: frame)
         imageView.contentMode = .scaleAspectFit
@@ -90,7 +90,7 @@ final class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let bioTextView: UITextView = {
+    private lazy var bioTextView: UITextView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let textView = UITextView(frame: frame)
         textView.isEditable = false

@@ -3,5 +3,7 @@ import Foundation
 protocol RegRouterInput: AnyObject {
     
     var view: RegistrationViewController! { get }
-    func showNextVC()
+   
+    func showRegVC()
+    func showAuthVC()
 }

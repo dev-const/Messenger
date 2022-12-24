@@ -4,7 +4,7 @@ final class EditProfileViewController: UIViewController {
     
     //MARK: Create UI objects
     
-    private let backButton: UIButton = {
+    private lazy var backButton: UIButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 60, height: 60))
         let button = UIButton(frame: frame)
         let image = UIImage(systemName: "arrowshape.backward")
@@ -14,14 +14,14 @@ final class EditProfileViewController: UIViewController {
         return button
     }()
     
-    private let topView: UIView = {
+    private lazy var topView: UIView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 130))
         let view = UIView(frame: frame)
         view.backgroundColor = UIColor(named: CustomColor.BlueLight.rawValue)
         return  view
     }()
     
-    private let avatarImageView: UIImageView = {
+    private lazy var avatarImageView: UIImageView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 180, height: 180))
         let imageView = UIImageView(frame: frame)
         imageView.layer.cornerRadius = imageView.bounds.height/2
@@ -34,12 +34,12 @@ final class EditProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let saveButton: CustomButton = {
+    private lazy var saveButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.blue, title: "Сохранить")
         return button
     }()
     
-    private let changePhotoButton: UIButton = {
+    private lazy var changePhotoButton: UIButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 55, height: 25))
         let button = UIButton(frame: frame)
         button.setTitle("Edit", for: .normal)
@@ -51,14 +51,14 @@ final class EditProfileViewController: UIViewController {
         return button
     }()
     
-    private let nickNameLabel: CustomLabel = {
+    private lazy var nickNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 18, numberOfLines: 1)
         label.textColor = .black
         label.text = "Никнейм"
         return label
     }()
     
-    private let nickNameTextField: UITextField = {
+    private lazy var nickNameTextField: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.autocapitalizationType = .words
@@ -72,14 +72,14 @@ final class EditProfileViewController: UIViewController {
         return textField
     }()
     
-    private let cityNameLabel: CustomLabel = {
+    private lazy var cityNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 18, numberOfLines: 1)
         label.textColor = .black
         label.text = "Город"
         return label
     }()
     
-    private let cityNameTextField: UITextField = {
+    private lazy var cityNameTextField: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.autocapitalizationType = .words
@@ -93,14 +93,14 @@ final class EditProfileViewController: UIViewController {
         return textField
     }()
     
-    private let dateOfBirthNameLabel: CustomLabel = {
+    private lazy var dateOfBirthNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 18, numberOfLines: 1)
         label.textColor = .black
         label.text = "Дата рождения"
         return label
     }()
     
-    private let datePicker: UIDatePicker = {
+    private lazy var datePicker: UIDatePicker = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 35))
         let datePicker = UIDatePicker(frame: frame)
         if #available(iOS 13.4, *) {
@@ -112,7 +112,7 @@ final class EditProfileViewController: UIViewController {
         return datePicker
     }()
     
-    private let bioTextView: UITextView = {
+    private lazy var bioTextView: UITextView = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let textView = UITextView(frame: frame)
         textView.isEditable = true

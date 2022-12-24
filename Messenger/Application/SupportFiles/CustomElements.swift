@@ -46,6 +46,27 @@ class CustomLabel: UILabel {
     }
 }
 
+//MARK: ImageView
+
+class CustomImageView: UIImageView {
+        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        contentMode = .scaleAspectFit
+        alpha = 0
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 8, height: 12)
+        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.5
+        layer.masksToBounds = false
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 //MARK: Custom OneTimeTextField for verification viewController
 
 class CustomOneTimeTextField: UITextField {

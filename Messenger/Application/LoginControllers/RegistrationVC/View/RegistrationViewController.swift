@@ -6,17 +6,18 @@ final class RegistrationViewController: UIViewController, RegViewInput {
     
     //MARK: Create UI objects
     
-    private let closeButton: UIButton = {
+    private lazy var closeButton: UIButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
         let button = UIButton(frame: frame)
         let image = UIImage(systemName: "xmark")
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
         button.contentMode = .scaleAspectFill
+        button.alpha = 0
         return button
     }()
     
-    private let promptLabel: CustomLabel = {
+    private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для получения доступа"
         label.textAlignment = .left
@@ -24,7 +25,15 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         return label
     }()
     
-    private let userNameTF: UITextField = {
+    private lazy var letterImageView: CustomImageView = {
+        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
+        let imageView = CustomImageView(frame: frame)
+        imageView.image = UIImage(named: "2-open-letter-envelope")
+        imageView.alpha = 0
+        return imageView
+    }()
+    
+    private lazy var userNameTF: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.borderStyle = .roundedRect
@@ -35,19 +44,21 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         textField.autocorrectionType = .yes
         textField.returnKeyType = .next
         textField.keyboardType = .default
+        textField.alpha = 0
         return textField
     }()
     
-    private let incorrectUserNameLabel: CustomLabel = {
+    private lazy var incorrectUserNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
         label.text = "Введены некорректные данные"
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
-    private let phoneNumberTF: UITextField = {
+    private lazy var phoneNumberTF: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.borderStyle = .roundedRect
@@ -56,24 +67,27 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         textField.returnKeyType = .done
         textField.textContentType = .telephoneNumber
         textField.keyboardType = .numberPad
+        textField.alpha = 0
         return textField
     }()
     
-    private let incorrectPhoneNumberLabel: CustomLabel = {
+    private lazy var incorrectPhoneNumberLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
         label.text = "Введены некорректные данные"
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
-    private let signInButton: CustomButton = {
+    private lazy var signInButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.blue, title: "Зарегистрироваться")
+        button.alpha = 0
         return button
     }()
     
-    private let licenseAgreementLabel: CustomLabel = {
+    private lazy var licenseAgreementLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
         label.text = "Регистрируясь, вы соглашаетесь с условиями использования и политикой конфиденциальности, включая использование файлов cookie. Другие пользователи смогут найти вас по номеру телефона, если он предоставлен."
         label.textColor = .darkGray
@@ -92,14 +106,58 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         userNameTF.delegate = self
         phoneNumberTF.delegate = self
         
+        signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
     
+    @objc
+    func signIn() {
+        animateForViewWillDisappear()
+//        output.
+    }
+    
+    //MARK: ViewDidAppear
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 1.0) {
+        animateForViewDidAppear()
+    }
+    
+    //MARK: Animate functions
+    
+    private func animateForViewDidAppear() {
+        
+        UIView.animate(withDuration: 0.3) {
             self.promptLabel.alpha = 1.0
+            self.letterImageView.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.userNameTF.alpha = 1.0
+            self.incorrectUserNameLabel.alpha = 1.0
+            self.incorrectPhoneNumberLabel.alpha = 1.0
+            self.phoneNumberTF.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.7) {
+            self.signInButton.alpha = 1.0
             self.licenseAgreementLabel.alpha = 1.0
+        }
+    }
+    
+    private func animateForViewWillDisappear() {
+        
+        UIView.animate(withDuration: 0.7) {
+            self.promptLabel.alpha = 0
+            self.letterImageView.alpha = 0
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.userNameTF.alpha = 0
+            self.incorrectUserNameLabel.alpha = 0
+            self.incorrectPhoneNumberLabel.alpha = 0
+            self.phoneNumberTF.alpha = 0
+        }
+        UIView.animate(withDuration: 0.4) {
+            self.signInButton.alpha = 0
+            self.licenseAgreementLabel.alpha = 0
         }
     }
     
@@ -139,6 +197,7 @@ extension RegistrationViewController {
         
         view.addSubview(closeButton)
         view.addSubview(promptLabel)
+        view.addSubview(letterImageView)
         view.addSubview(userNameTF)
         view.addSubview(incorrectUserNameLabel)
         view.addSubview(phoneNumberTF)
@@ -148,6 +207,7 @@ extension RegistrationViewController {
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
+        letterImageView.translatesAutoresizingMaskIntoConstraints = false
         userNameTF.translatesAutoresizingMaskIntoConstraints = false
         incorrectUserNameLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberTF.translatesAutoresizingMaskIntoConstraints = false
@@ -158,15 +218,20 @@ extension RegistrationViewController {
         
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             promptLabel.topAnchor.constraint(equalTo: closeButton.topAnchor),
-            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            promptLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -30),
+            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            promptLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
-            userNameTF.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 140),
-            userNameTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            userNameTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            letterImageView.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 20),
+            letterImageView.widthAnchor.constraint(equalToConstant: 200),
+            letterImageView.heightAnchor.constraint(equalToConstant: 200),
+            letterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            userNameTF.topAnchor.constraint(equalTo: letterImageView.bottomAnchor, constant: 20),
+            userNameTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            userNameTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 2),
             incorrectUserNameLabel.leadingAnchor.constraint(equalTo: userNameTF.leadingAnchor),

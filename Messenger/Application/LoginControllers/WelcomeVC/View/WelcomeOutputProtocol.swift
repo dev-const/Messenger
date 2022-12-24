@@ -1,9 +1,9 @@
-import Foundation
+import UIKit
 
 protocol WelcomeViewOutputProtocol: AnyObject {
     
     var view: WelcomeViewInputProtocol! { get }
-    var router: WelcomeRouterInputProtocol! { get }
     
-    func openNextVC(_ viewController: UIViewController)
+    func openRegVC()
+    func openAuthVC()
 }

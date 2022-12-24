@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>875393627502-uu2d8pk8sdftq96opq14d6t7u7fs5ob2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.875393627502-uu2d8pk8sdftq96opq14d6t7u7fs5ob2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC7PV7q_fpmLuW8YwlM8C63rIcuU7sXWlU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>875393627502</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Komigen.Messenger</string>
+	<key>PROJECT_ID</key>
+	<string>messenger-a54b6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>messenger-a54b6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:875393627502:ios:479d9205e532fa8f3b3d7f</string>
+</dict>
+</plist>

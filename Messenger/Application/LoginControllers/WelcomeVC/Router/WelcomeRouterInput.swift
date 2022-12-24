@@ -2,5 +2,7 @@ import UIKit
 
 protocol WelcomeRouterInputProtocol: AnyObject {
     
-    func openNextVC(_ viewController: UIViewController)
+    var view: UIViewController! { get set }
+    
+    func openNextVC()
 }

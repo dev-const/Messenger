@@ -1,9 +1,14 @@
 import Foundation
 
 final class RegRouter: RegRouterInput {
+    
     weak var view: RegistrationViewController!
     
-    func showNextVC() {
-        
+    func showRegVC() {
+        print("showRegVC")
+    }
+    
+    func showAuthVC() {
+        print("showAuthVC")
     }
 }

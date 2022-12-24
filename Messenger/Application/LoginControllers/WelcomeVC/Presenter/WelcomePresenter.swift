@@ -1,12 +1,16 @@
 import UIKit
 
-final class WelcomeViewPresenter: WelcomeViewOutputProtocol {
+final class WelcomePresenter: WelcomeViewOutputProtocol {
     
     weak var view: WelcomeViewInputProtocol!
     var router: WelcomeRouterInputProtocol!
     
-    @objc func openNextVC(_ viewController: UIViewController) {
-        router.openNextVC(viewController)
+    @objc func openRegVC() {
+        router.openNextVC()
+    }
+    
+    @objc func openAuthVC() {
+        router.openNextVC()
     }
 
 }

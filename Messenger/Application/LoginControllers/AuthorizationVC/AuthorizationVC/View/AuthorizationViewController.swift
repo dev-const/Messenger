@@ -1,27 +1,38 @@
 import UIKit
 
-final class AuthorizationViewController: UIViewController {
+final class AuthorizationViewController: UIViewController, AuthViewInput {
+    
+    var output: AuthViewOutput!
     
     //MARK: Create UI objects
     
-    private let closeButton: UIButton = {
+    private lazy var closeButton: UIButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
         let button = UIButton(frame: frame)
         let image = UIImage(systemName: "xmark")
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
         button.contentMode = .scaleAspectFill
+        button.alpha = 0
         return button
     }()
     
-    private let promptLabel: CustomLabel = {
+    private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для входа в учетную запись"
         label.alpha = 0
         return label
     }()
     
-    private let userNameTF: UITextField = {
+    private lazy var letterImageView: CustomImageView = {
+        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
+        let imageView = CustomImageView(frame: frame)
+        imageView.image = UIImage(named: "3-envelope-in-the-air")
+        imageView.alpha = 0
+        return imageView
+    }()
+    
+    private lazy var userNameTF: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.borderStyle = .roundedRect
@@ -32,19 +43,21 @@ final class AuthorizationViewController: UIViewController {
         textField.autocorrectionType = .yes
         textField.returnKeyType = .next
         textField.keyboardType = .phonePad
+        textField.alpha = 0
         return textField
     }()
     
-    private let incorrectUserNameLabel: CustomLabel = {
+    private lazy var incorrectUserNameLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
         label.text = "Введены некорректные данные"
         label.textAlignment = .left
         label.textColor = .red
-        label.isHidden = false
+        label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
-    private let phoneNumberTF: UITextField = {
+    private lazy var phoneNumberTF: UITextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 34))
         let textField = UITextField(frame: frame)
         textField.borderStyle = .roundedRect
@@ -53,20 +66,23 @@ final class AuthorizationViewController: UIViewController {
         textField.returnKeyType = .done
         textField.textContentType = .telephoneNumber
         textField.keyboardType = .numberPad
+        textField.alpha = 0
         return textField
     }()
     
-    private let incorrectPhoneNumberLabel: CustomLabel = {
+    private lazy var incorrectPhoneNumberLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 12, numberOfLines: 0)
         label.text = "Введены некорректные данные"
         label.textAlignment = .left
         label.textColor = .red
-        label.isHidden = false
+        label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
-    private let nextButton: CustomButton = {
+    private lazy var nextButton: CustomButton = {
         let button = CustomButton(style: ButtonStyle.white, title: "Далее")
+        button.alpha = 0
         return button
     }()
     
@@ -78,17 +94,70 @@ final class AuthorizationViewController: UIViewController {
         setConstraints()
         phoneNumberTF.delegate = self
         userNameTF.delegate = self
+        
+        closeButton.addTarget(self, action: #selector(closeSelfVC), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(openNextVC), for: .touchUpInside)
     }
+    
+    @objc
+    func closeSelfVC() {
+        animateForViewWillDisappear()
+//        output.
+    }
+    
+    @objc
+    func openNextVC() {
+        animateForViewWillDisappear()
+//        output.
+    }
+    
+    //MARK: ViewDidAppear
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.7) {
+      animateForViewDidAppear()
+    }
+    
+    
+    //MARK: Animate functions
+    
+    private func animateForViewDidAppear() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.closeButton.alpha = 1.0
             self.promptLabel.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.userNameTF.alpha = 1.0
+            self.incorrectUserNameLabel.alpha = 1.0
+            self.incorrectPhoneNumberLabel.alpha = 1.0
+            self.phoneNumberTF.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.7) {
+            self.nextButton.alpha = 1.0
+            self.letterImageView.alpha = 1.0
         }
     }
     
-}
+    private func animateForViewWillDisappear() {
+        
+        UIView.animate(withDuration: 0.7) {
+            self.closeButton.alpha = 0
+            self.promptLabel.alpha = 0
+            self.letterImageView.alpha = 0
 
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.userNameTF.alpha = 0
+            self.incorrectUserNameLabel.alpha = 0
+            self.incorrectPhoneNumberLabel.alpha = 0
+            self.phoneNumberTF.alpha = 0
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.nextButton.alpha = 0
+        }
+    }
+}
 
 //MARK: UITextFieldDelegate
 
@@ -118,6 +187,7 @@ extension AuthorizationViewController {
         
         view.addSubview(closeButton)
         view.addSubview(promptLabel)
+        view.addSubview(letterImageView)
         view.addSubview(userNameTF)
         view.addSubview(incorrectUserNameLabel)
         view.addSubview(phoneNumberTF)
@@ -126,6 +196,7 @@ extension AuthorizationViewController {
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
+        letterImageView.translatesAutoresizingMaskIntoConstraints = false
         userNameTF.translatesAutoresizingMaskIntoConstraints = false
         incorrectUserNameLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneNumberTF.translatesAutoresizingMaskIntoConstraints = false
@@ -134,13 +205,18 @@ extension AuthorizationViewController {
         
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             promptLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             promptLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -30),
             
-            userNameTF.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            letterImageView.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 20),
+            letterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            letterImageView.widthAnchor.constraint(equalToConstant: 200),
+            letterImageView.heightAnchor.constraint(equalToConstant: 200),
+            
+            userNameTF.topAnchor.constraint(equalTo: letterImageView.bottomAnchor, constant: 30),
             userNameTF.leadingAnchor.constraint(equalTo: promptLabel.leadingAnchor),
             userNameTF.trailingAnchor.constraint(equalTo: closeButton.trailingAnchor),
             

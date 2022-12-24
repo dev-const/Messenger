@@ -27,6 +27,11 @@
 		B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5443962294B2F5400201C2B /* FirebaseManager.swift */; };
 		B5443966294B30F800201C2B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5443965294B30F800201C2B /* Document.swift */; };
 		B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */; };
+		B5848FFE2956D8D3003D176D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */; };
+		B58490002956EA4E003D176D /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5848FFF2956EA4E003D176D /* AlertBuilder.swift */; };
+		B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58490012956F204003D176D /* WelcomeAssembly.swift */; };
+		B584900629574279003D176D /* AuthViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584900529574279003D176D /* AuthViewInput.swift */; };
+		B584900829574308003D176D /* AuthViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584900729574308003D176D /* AuthViewOutput.swift */; };
 		B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D44F293F1D2E00198385 /* AppDelegate.swift */; };
 		B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D451293F1D2E00198385 /* SceneDelegate.swift */; };
 		B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D453293F1D2E00198385 /* WelcomeViewController.swift */; };
@@ -37,7 +42,6 @@
 		B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */; };
 		B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */; };
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
-		B59863C3294B28520061E5A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59863C2294B28520061E5A8 /* GoogleService-Info.plist */; };
 		B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */; };
 		B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */; };
 		B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */; };
@@ -74,6 +78,11 @@
 		B5443962294B2F5400201C2B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B5443965294B30F800201C2B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B5848FFF2956EA4E003D176D /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		B58490012956F204003D176D /* WelcomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAssembly.swift; sourceTree = "<group>"; };
+		B584900529574279003D176D /* AuthViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewInput.swift; sourceTree = "<group>"; };
+		B584900729574308003D176D /* AuthViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewOutput.swift; sourceTree = "<group>"; };
 		B589D44C293F1D2E00198385 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B589D44F293F1D2E00198385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B589D451293F1D2E00198385 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +95,6 @@
 		B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		B59863C2294B28520061E5A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInputProtocol.swift; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 		B51F475B294085A200BE0016 /* WelcomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				B58490012956F204003D176D /* WelcomeAssembly.swift */,
 				B5D6F8F92951AFE0008BDD60 /* View */,
 				B5D6F8F82951AFBC008BDD60 /* Presenter */,
 				B5D6F8F72951AFB2008BDD60 /* Router */,
@@ -296,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F477D29410F0500BE0016 /* Extensions.swift */,
+				B5848FFF2956EA4E003D176D /* AlertBuilder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */,
+				B584900529574279003D176D /* AuthViewInput.swift */,
+				B584900729574308003D176D /* AuthViewOutput.swift */,
 				B53FA84D295344600069E067 /* Presenter */,
 				B53FA84F295344870069E067 /* Interactor */,
 				B53FA850295344970069E067 /* Router */,
@@ -557,7 +569,7 @@
 		B589D44E293F1D2E00198385 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				B59863C2294B28520061E5A8 /* GoogleService-Info.plist */,
+				B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */,
 				B589D467293F1DC300198385 /* Resources */,
 				B589D466293F1D9F00198385 /* Application */,
 				B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */,
@@ -698,7 +710,7 @@
 			files = (
 				B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */,
 				B5F9AF9E293F3A8000A056F5 /* Roboto-Black.ttf in Resources */,
-				B59863C3294B28520061E5A8 /* GoogleService-Info.plist in Resources */,
+				B5848FFE2956D8D3003D176D /* GoogleService-Info.plist in Resources */,
 				B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */,
 				B589D45F293F1D3000198385 /* LaunchScreen.storyboard in Resources */,
 				B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */,
@@ -767,12 +779,14 @@
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
 				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
+				B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */,
 				B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */,
 				B51F47702940BC8800BE0016 /* RegInteractorInput.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
 				B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */,
+				B584900829574308003D176D /* AuthViewOutput.swift in Sources */,
 				B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */,
 				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
 				B5443966294B30F800201C2B /* Document.swift in Sources */,
@@ -783,7 +797,9 @@
 				B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */,
 				B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */,
 				B51F475529407B5A00BE0016 /* Model.swift in Sources */,
+				B584900629574279003D176D /* AuthViewInput.swift in Sources */,
 				B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */,
+				B58490002956EA4E003D176D /* AlertBuilder.swift in Sources */,
 				B51F47772940BD1E00BE0016 /* Entity.swift in Sources */,
 				B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */,
 				B51F477A2940C0AF00BE0016 /* RegRouterInput.swift in Sources */,

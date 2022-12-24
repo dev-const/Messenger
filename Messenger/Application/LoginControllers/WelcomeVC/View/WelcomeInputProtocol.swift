@@ -2,7 +2,7 @@ import Foundation
 
 protocol WelcomeViewInputProtocol: AnyObject {
     
-    var presenter: WelcomeViewOutputProtocol! { get }
+    var output: WelcomeViewOutputProtocol! { get }
     
     func openRegVC()
     func openAuthVC()

@@ -26,3 +26,10 @@ enum CustomColor: String {
     case VioletLight = "CustomVioletLight"
     case Green       = "CustomGreen"
 }
+
+//MARK: Color
+
+enum ConstantsForConstraints: CGFloat {
+    case LeftIntoView = 30
+    case RightIntoView = -30
+}

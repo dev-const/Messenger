@@ -13,40 +13,54 @@ final class VerificationViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
         button.contentMode = .scaleAspectFill
+        button.alpha = 0
         return button
     }()
     
-    private let promptLabel: CustomLabel = {
+    private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Последний шаг. Введите полученный код для верификации номера"
+        label.alpha = 0
         label.alpha = 0
         return label
     }()
     
-    private let verificationCode: CustomLabel = {
+    private lazy var letterImageView: CustomImageView = {
+        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 100))
+        let imageView = CustomImageView(frame: frame)
+        imageView.image = UIImage(named: "4-opened-envelope")
+        imageView.alpha = 0
+        return imageView
+    }()
+    
+    private lazy var verificationCode: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoMedium.rawValue, fontSize: 16, numberOfLines: 1)
         label.text = "КОД ВЕРИФИКАЦИИ"
+        label.alpha = 0
         return label
     }()
     
-    private let oneTimeCode: CustomOneTimeTextField = {
+    private lazy var oneTimeCode: CustomOneTimeTextField = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let textField = CustomOneTimeTextField()
+        textField.alpha = 0
         return textField
     }()
     
-    private let incorrectCodeLabel: CustomLabel = {
+    private lazy var incorrectCodeLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 14, numberOfLines: 1)
         label.text = "Неверный код. Для теста введите - 133337"
         label.textAlignment = .left
         label.textColor = .red
         label.isHidden = true
+        label.alpha = 0
         return label
     }()
     
-    private let okButton: CustomButton = {
+    private lazy var okButton: CustomButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let button = CustomButton(style: ButtonStyle.blue, title: "Готово")
+        button.alpha = 0
         return button
     }()
     
@@ -78,16 +92,17 @@ final class VerificationViewController: UIViewController {
         }
     }
     
+    //MARK: ViewDidAppear
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.5) {
-            self.promptLabel.alpha = 1.0
-        }
+        animateForViewDidAppear()
     }
     
     @objc
     private func okButtonDidPress() {
         guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
+        animateForViewWillDisappear()
         print("User successfully logged in")
         //Go to next - ChatVC
         //FIXME: UserDefaults
@@ -96,8 +111,46 @@ final class VerificationViewController: UIViewController {
     @objc
     private func backButtonDidPress() {
         guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
+        animateForViewWillDisappear()
         print("BackButton did pressed")
         //Go to back VC
+    }
+    
+    //MARK: Animate functions
+    
+    private func animateForViewDidAppear() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.backButton.alpha = 1.0
+            self.promptLabel.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.verificationCode.alpha = 1.0
+            self.oneTimeCode.alpha = 1.0
+            self.incorrectCodeLabel.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.7) {
+            self.okButton.alpha = 1.0
+            self.letterImageView.alpha = 1.0
+        }
+    }
+    
+    private func animateForViewWillDisappear() {
+        
+        UIView.animate(withDuration: 0.7) {
+            self.backButton.alpha = 0
+            self.promptLabel.alpha = 0
+            self.letterImageView.alpha = 0
+
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.verificationCode.alpha = 0
+            self.oneTimeCode.alpha = 0
+            self.incorrectCodeLabel.alpha = 0
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.okButton.alpha = 0
+        }
     }
     
     
@@ -120,6 +173,7 @@ extension VerificationViewController {
     private func setConstraints() {
         view.addSubview(backButton)
         view.addSubview(promptLabel)
+        view.addSubview(letterImageView)
         view.addSubview(verificationCode)
         view.addSubview(oneTimeCode)
         view.addSubview(incorrectCodeLabel)
@@ -127,6 +181,7 @@ extension VerificationViewController {
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
+        letterImageView.translatesAutoresizingMaskIntoConstraints = false
         verificationCode.translatesAutoresizingMaskIntoConstraints = false
         oneTimeCode.translatesAutoresizingMaskIntoConstraints = false
         incorrectCodeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -134,15 +189,20 @@ extension VerificationViewController {
         
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             
             promptLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 35),
-            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
-            verificationCode.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            letterImageView.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 20),
+            letterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            letterImageView.widthAnchor.constraint(equalToConstant: 200),
+            letterImageView.heightAnchor.constraint(equalToConstant: 200),
+            
+            verificationCode.topAnchor.constraint(equalTo: letterImageView.bottomAnchor, constant: 30),
+            verificationCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            verificationCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             oneTimeCode.topAnchor.constraint(equalTo: verificationCode.bottomAnchor, constant: 5),
             oneTimeCode.leadingAnchor.constraint(equalTo: verificationCode.leadingAnchor),
@@ -154,8 +214,8 @@ extension VerificationViewController {
             incorrectCodeLabel.trailingAnchor.constraint(equalTo: oneTimeCode.trailingAnchor),
             
             okButton.topAnchor.constraint(equalTo: incorrectCodeLabel.bottomAnchor, constant: 35),
-            okButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            okButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-30)
+            okButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            okButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue)
         ])
     }
 }

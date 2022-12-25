@@ -1,10 +1,22 @@
 import UIKit
 
+//MARK: Protocol
+
+protocol WelcomeViewInputProtocol: AnyObject {
+    
+    var presenter: WelcomeViewOutputProtocol! { get set }
+    
+    func presentRegVC(viewController: RegistrationViewController)
+    func presentAuthVC(viewController: AuthorizationViewController)
+}
+
+//MARK: ViewController
+
 final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     
-    var output: WelcomeViewOutputProtocol!
+    var presenter: WelcomeViewOutputProtocol!
     var versionApp = "1.0.0"
-    
+
     //MARK: Create UI objects
     
     private lazy var messengerLabel: CustomLabel = {
@@ -54,9 +66,11 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
+        
         setConstraints()
-        signUpButton.addTarget(self, action: #selector(openRegVC), for: .touchUpInside)
-        logInButton.addTarget(self, action: #selector(openAuthVC), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(presentRegVC), for: .touchUpInside)
+        logInButton.addTarget(self, action: #selector(presentAuthVC), for: .touchUpInside)
         
         view.backgroundColor = .white
     }
@@ -66,14 +80,16 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
         animateForViewDidAppear()
     }
     
-    @objc func openRegVC() {
+    @objc
+    func presentRegVC(viewController: RegistrationViewController) {
         animateForViewWillDisappear()
-//        output.openRegVC()
+        presenter.presentRegVC()
     }
     
-    @objc func openAuthVC() {
+    @objc
+    func presentAuthVC(viewController: AuthorizationViewController) {
         animateForViewWillDisappear()
-//        output.openAuthVC()
+        presenter.presentAuthVC()
     }
     
     //MARK: Animate functions
@@ -99,7 +115,7 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
         
         UIView.animate(withDuration: 0.7) {
             self.messengerLabel.alpha = 0
-            self.letterImageView.alpha = 1.0
+            self.letterImageView.alpha = 0
         }
         
         UIView.animate(withDuration: 0.5) {

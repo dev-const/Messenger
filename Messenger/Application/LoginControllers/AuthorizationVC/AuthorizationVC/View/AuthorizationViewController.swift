@@ -1,8 +1,19 @@
 import UIKit
 
-final class AuthorizationViewController: UIViewController, AuthViewInput {
+//MARK: Protocol
+
+protocol AuthViewInputProtocol: AnyObject {
+    var output: AuthViewOutputProtocol! { get }
     
-    var output: AuthViewOutput!
+    func closeSelfVC()
+    func openNextVC()
+}
+
+//MARK: ViewController
+
+final class AuthorizationViewController: UIViewController, AuthViewInputProtocol {
+    
+    var output: AuthViewOutputProtocol!
     
     //MARK: Create UI objects
     

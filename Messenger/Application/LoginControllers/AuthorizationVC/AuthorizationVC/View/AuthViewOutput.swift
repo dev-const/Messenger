@@ -1,7 +1,7 @@
 import Foundation
 
-protocol AuthViewOutput: AnyObject {
-    var view: AuthViewInput! { get }
+protocol AuthViewOutputProtocol: AnyObject {
+    var view: AuthViewInputProtocol! { get }
     
     func closeSelfVC()
     func openNextVC()

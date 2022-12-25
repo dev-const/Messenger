@@ -1,17 +1,17 @@
 import UIKit
 
-class WelcomeAssembly: NSObject {
-
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        
-        let view = WelcomeViewController()
-        let presenter = WelcomePresenter()
+final class WelcomeAssembly {
+    
+    static func build() -> WelcomeViewController {
+        let viewController = WelcomeViewController()
         let router = WelcomeRouter()
+        let presenter = WelcomePresenter()
         
-        view.output = presenter
-        presenter.view = view
+        viewController.presenter = presenter
+        presenter.view = viewController
         presenter.router = router
-        router.view = view
+        router.viewController = viewController
+        
+        return viewController
     }
 }

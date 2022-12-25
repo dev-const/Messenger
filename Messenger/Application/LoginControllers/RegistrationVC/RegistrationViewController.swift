@@ -1,8 +1,29 @@
 import UIKit
 
-final class RegistrationViewController: UIViewController, RegViewInput {
+//MARK: Protocol
+
+protocol RegViewInputProtocol: AnyObject {
     
-    var output: RegViewOutput!
+    var presenter: RegViewOutputProtocol! { get }
+    
+    func didIncorrectUserNameLabel()
+    func didIncorrectPhoneNumberLabel()
+    func correctUserNameLabel()
+    func correctPhoneNumberLabel()
+    func presentErrorAlert()
+    
+    //MARK: UITextFieldDelegate
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+}
+
+//MARK: ViewController
+
+final class RegistrationViewController: UIViewController {
+    
+    var presenter: RegViewOutputProtocol!
     
     //MARK: Create UI objects
     
@@ -107,7 +128,7 @@ final class RegistrationViewController: UIViewController, RegViewInput {
     @objc
     func signIn() {
         animateForViewWillDisappear()
-//        output.
+//        presenter
     }
     
     //MARK: ViewDidAppear
@@ -161,6 +182,34 @@ final class RegistrationViewController: UIViewController, RegViewInput {
         self.view.endEditing(true)
     }
     
+}
+
+//MARK: RegViewInputProtocol
+
+extension RegistrationViewController: RegViewInputProtocol {
+    
+    func didIncorrectUserNameLabel() {
+        incorrectUserNameLabel.isHidden = false
+    }
+    
+    func didIncorrectPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = false
+    }
+    
+    func correctUserNameLabel() {
+        incorrectUserNameLabel.isHidden = true
+    }
+    
+    func correctPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = true
+    }
+    
+    func presentErrorAlert() {
+        let alertVC = CustomAlert.createAlert(title: AlertMessages.failedToSendData.rawValue,
+                                   message: AlertMessages.checkYourInternetConnection.rawValue,
+                                   actionTitle: AlertMessages.ok.rawValue)
+        self.present(alertVC, animated: true)
+    }
 }
 
 //MARK: UITextFieldDelegate

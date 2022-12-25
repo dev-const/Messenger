@@ -11,15 +11,10 @@
 		B51F475029407A5000BE0016 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F474F29407A5000BE0016 /* ChatVC.swift */; };
 		B51F475529407B5A00BE0016 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475429407B5A00BE0016 /* Model.swift */; };
 		B51F4760294087F900BE0016 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475F294087F900BE0016 /* Chat.swift */; };
-		B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47652940BBAB00BE0016 /* RegViewInput.swift */; };
-		B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47672940BBC200BE0016 /* RegViewOutput.swift */; };
 		B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47692940BC1700BE0016 /* RegPresenter.swift */; };
 		B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F476C2940BC4500BE0016 /* RegInteractor.swift */; };
-		B51F47702940BC8800BE0016 /* RegInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F476F2940BC8800BE0016 /* RegInteractorInput.swift */; };
-		B51F47722940BC9A00BE0016 /* RegInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47712940BC9A00BE0016 /* RegInteractorOutput.swift */; };
 		B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47732940BCD200BE0016 /* RegRouter.swift */; };
 		B51F47772940BD1E00BE0016 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47762940BD1E00BE0016 /* Entity.swift */; };
-		B51F477A2940C0AF00BE0016 /* RegRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47792940C0AF00BE0016 /* RegRouterInput.swift */; };
 		B51F477E29410F0500BE0016 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F477D29410F0500BE0016 /* Extensions.swift */; };
 		B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F4780294878FE00BE0016 /* CustomElements.swift */; };
 		B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F478229488E0C00BE0016 /* SupportConstants.swift */; };
@@ -30,7 +25,6 @@
 		B5848FFE2956D8D3003D176D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */; };
 		B58490002956EA4E003D176D /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5848FFF2956EA4E003D176D /* AlertBuilder.swift */; };
 		B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58490012956F204003D176D /* WelcomeAssembly.swift */; };
-		B584900629574279003D176D /* AuthViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584900529574279003D176D /* AuthViewInput.swift */; };
 		B584900829574308003D176D /* AuthViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B584900729574308003D176D /* AuthViewOutput.swift */; };
 		B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D44F293F1D2E00198385 /* AppDelegate.swift */; };
 		B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D451293F1D2E00198385 /* SceneDelegate.swift */; };
@@ -44,9 +38,7 @@
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
 		B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */; };
 		B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */; };
-		B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */; };
-		B5D6F8FD2951B016008BDD60 /* WelcomeOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */; };
-		B5D6F8FF2951B2A5008BDD60 /* WelcomeRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */; };
+		B5E114872958B85A00414B1A /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114862958B85A00414B1A /* RegAssembly.swift */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
 		B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */; };
@@ -62,15 +54,10 @@
 		B51F474F29407A5000BE0016 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		B51F475429407B5A00BE0016 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B51F475F294087F900BE0016 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		B51F47652940BBAB00BE0016 /* RegViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewInput.swift; sourceTree = "<group>"; };
-		B51F47672940BBC200BE0016 /* RegViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewOutput.swift; sourceTree = "<group>"; };
 		B51F47692940BC1700BE0016 /* RegPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPresenter.swift; sourceTree = "<group>"; };
 		B51F476C2940BC4500BE0016 /* RegInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegInteractor.swift; sourceTree = "<group>"; };
-		B51F476F2940BC8800BE0016 /* RegInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegInteractorInput.swift; sourceTree = "<group>"; };
-		B51F47712940BC9A00BE0016 /* RegInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegInteractorOutput.swift; sourceTree = "<group>"; };
 		B51F47732940BCD200BE0016 /* RegRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouter.swift; sourceTree = "<group>"; };
 		B51F47762940BD1E00BE0016 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		B51F47792940C0AF00BE0016 /* RegRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouterInput.swift; sourceTree = "<group>"; };
 		B51F477D29410F0500BE0016 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B51F4780294878FE00BE0016 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 		B51F478229488E0C00BE0016 /* SupportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportConstants.swift; sourceTree = "<group>"; };
@@ -78,10 +65,9 @@
 		B5443962294B2F5400201C2B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B5443965294B30F800201C2B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
-		B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Messenger/Resources/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5848FFF2956EA4E003D176D /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		B58490012956F204003D176D /* WelcomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAssembly.swift; sourceTree = "<group>"; };
-		B584900529574279003D176D /* AuthViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewInput.swift; sourceTree = "<group>"; };
 		B584900729574308003D176D /* AuthViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewOutput.swift; sourceTree = "<group>"; };
 		B589D44C293F1D2E00198385 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B589D44F293F1D2E00198385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +83,7 @@
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
-		B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInputProtocol.swift; sourceTree = "<group>"; };
-		B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOutputProtocol.swift; sourceTree = "<group>"; };
-		B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouterInput.swift; sourceTree = "<group>"; };
+		B5E114862958B85A00414B1A /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -179,11 +163,7 @@
 		B51F47592940853B00BE0016 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				B53FA853295345250069E067 /* View */,
 				B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */,
-				B53FA8542953455E0069E067 /* Presenter */,
-				B53FA8552953457D0069E067 /* Interactor */,
-				B53FA8562953458B0069E067 /* Router */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -191,11 +171,7 @@
 		B51F475A2940854400BE0016 /* EdirProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				B53FA857295345AF0069E067 /* View */,
-				B53FA85A295345CD0069E067 /* Router */,
-				B53FA859295345C40069E067 /* Interactor */,
-				B53FA858295345B60069E067 /* Presenter */,
-				B53FA85B295345F80069E067 /* Entity */,
+				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
 			);
 			path = EdirProfileVC;
 			sourceTree = "<group>";
@@ -204,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				B58490012956F204003D176D /* WelcomeAssembly.swift */,
-				B5D6F8F92951AFE0008BDD60 /* View */,
-				B5D6F8F82951AFBC008BDD60 /* Presenter */,
-				B5D6F8F72951AFB2008BDD60 /* Router */,
+				B589D453293F1D2E00198385 /* WelcomeViewController.swift */,
+				B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */,
+				B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */,
 			);
 			path = WelcomeVC;
 			sourceTree = "<group>";
@@ -214,11 +190,12 @@
 		B51F475C294085BB00BE0016 /* RegistrationVC */ = {
 			isa = PBXGroup;
 			children = (
-				B51F47642940BACB00BE0016 /* View */,
-				B51F476B2940BC1B00BE0016 /* Presenter */,
-				B51F476E2940BC4B00BE0016 /* Interactor */,
-				B51F47752940BCD600BE0016 /* Router */,
-				B51F47782940BD2800BE0016 /* Entity */,
+				B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */,
+				B51F47692940BC1700BE0016 /* RegPresenter.swift */,
+				B51F476C2940BC4500BE0016 /* RegInteractor.swift */,
+				B51F47732940BCD200BE0016 /* RegRouter.swift */,
+				B5E114862958B85A00414B1A /* RegAssembly.swift */,
+				B51F47762940BD1E00BE0016 /* Entity.swift */,
 			);
 			path = RegistrationVC;
 			sourceTree = "<group>";
@@ -235,11 +212,9 @@
 		B51F475E294087E500BE0016 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				B53FA862295346E30069E067 /* View */,
-				B53FA863295346ED0069E067 /* Presenter */,
-				B53FA864295346FA0069E067 /* Interactor */,
-				B53FA865295347060069E067 /* Router */,
-				B53FA861295346C70069E067 /* Enitity */,
+				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
+				B51F474F29407A5000BE0016 /* ChatVC.swift */,
+				B51F475429407B5A00BE0016 /* Model.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -247,58 +222,9 @@
 		B51F47632940881A00BE0016 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				B53FA85C295346400069E067 /* View */,
-				B53FA85D2953464A0069E067 /* Presenter */,
-				B53FA85E295346570069E067 /* Interactor */,
-				B53FA8602953467F0069E067 /* Router */,
-				B53FA85F295346680069E067 /* Entity */,
+				B51F475F294087F900BE0016 /* Chat.swift */,
 			);
 			path = Chat;
-			sourceTree = "<group>";
-		};
-		B51F47642940BACB00BE0016 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */,
-				B51F47652940BBAB00BE0016 /* RegViewInput.swift */,
-				B51F47672940BBC200BE0016 /* RegViewOutput.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B51F476B2940BC1B00BE0016 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B51F47692940BC1700BE0016 /* RegPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B51F476E2940BC4B00BE0016 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				B51F476C2940BC4500BE0016 /* RegInteractor.swift */,
-				B51F476F2940BC8800BE0016 /* RegInteractorInput.swift */,
-				B51F47712940BC9A00BE0016 /* RegInteractorOutput.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B51F47752940BCD600BE0016 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				B51F47732940BCD200BE0016 /* RegRouter.swift */,
-				B51F47792940C0AF00BE0016 /* RegRouterInput.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B51F47782940BD2800BE0016 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				B51F47762940BD1E00BE0016 /* Entity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		B51F477F29410F0D00BE0016 /* Extensions */ = {
@@ -322,7 +248,7 @@
 		B53FA8492953440B0069E067 /* VerificationVC */ = {
 			isa = PBXGroup;
 			children = (
-				B53FA84C2953444D0069E067 /* View */,
+				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
 			);
 			path = VerificationVC;
 			sourceTree = "<group>";
@@ -339,204 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				B589D6A4293F6B4A00A0EEF2 /* AuthorizationViewController.swift */,
-				B584900529574279003D176D /* AuthViewInput.swift */,
 				B584900729574308003D176D /* AuthViewOutput.swift */,
-				B53FA84D295344600069E067 /* Presenter */,
-				B53FA84F295344870069E067 /* Interactor */,
-				B53FA850295344970069E067 /* Router */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA84C2953444D0069E067 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
-				B53FA84E295344770069E067 /* Presenter */,
-				B53FA851295344C90069E067 /* Interactor */,
-				B53FA852295344D40069E067 /* Router */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA84D295344600069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA84E295344770069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA84F295344870069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA850295344970069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B53FA851295344C90069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA852295344D40069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B53FA853295345250069E067 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA8542953455E0069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA8552953457D0069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA8562953458B0069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B53FA857295345AF0069E067 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA858295345B60069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA859295345C40069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA85A295345CD0069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B53FA85B295345F80069E067 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		B53FA85C295346400069E067 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B51F475F294087F900BE0016 /* Chat.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA85D2953464A0069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA85E295346570069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA85F295346680069E067 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		B53FA8602953467F0069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B53FA861295346C70069E067 /* Enitity */ = {
-			isa = PBXGroup;
-			children = (
-				B51F475429407B5A00BE0016 /* Model.swift */,
-			);
-			path = Enitity;
-			sourceTree = "<group>";
-		};
-		B53FA862295346E30069E067 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
-				B51F474F29407A5000BE0016 /* ChatVC.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B53FA863295346ED0069E067 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B53FA864295346FA0069E067 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B53FA865295347060069E067 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		B5443964294B2F6000201C2B /* Managers */ = {
@@ -569,7 +300,6 @@
 		B589D44E293F1D2E00198385 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */,
 				B589D467293F1DC300198385 /* Resources */,
 				B589D466293F1D9F00198385 /* Application */,
 				B589D458293F1D2E00198385 /* Messenger.xcdatamodeld */,
@@ -598,35 +328,9 @@
 				B5F9AF86293F3A4D00A056F5 /* Fonts-Roboto */,
 				B589D45B293F1D3000198385 /* Assets.xcassets */,
 				B589D460293F1D3000198385 /* Info.plist */,
+				B5848FFD2956D8D3003D176D /* GoogleService-Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B5D6F8F72951AFB2008BDD60 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */,
-				B5D6F8FE2951B2A5008BDD60 /* WelcomeRouterInput.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B5D6F8F82951AFBC008BDD60 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B5D6F8F92951AFE0008BDD60 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B589D453293F1D2E00198385 /* WelcomeViewController.swift */,
-				B5D6F8FA2951B005008BDD60 /* WelcomeInputProtocol.swift */,
-				B5D6F8FC2951B016008BDD60 /* WelcomeOutputProtocol.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B5F9AF86293F3A4D00A056F5 /* Fonts-Roboto */ = {
@@ -770,20 +474,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */,
-				B51F47682940BBC200BE0016 /* RegViewOutput.swift in Sources */,
-				B5D6F8FD2951B016008BDD60 /* WelcomeOutputProtocol.swift in Sources */,
 				B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */,
-				B51F47662940BBAB00BE0016 /* RegViewInput.swift in Sources */,
 				B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */,
 				B51F4760294087F900BE0016 /* Chat.swift in Sources */,
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
 				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
 				B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */,
-				B5D6F8FB2951B005008BDD60 /* WelcomeInputProtocol.swift in Sources */,
-				B51F47702940BC8800BE0016 /* RegInteractorInput.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
+				B5E114872958B85A00414B1A /* RegAssembly.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
 				B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */,
 				B584900829574308003D176D /* AuthViewOutput.swift in Sources */,
@@ -791,19 +491,15 @@
 				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
 				B5443966294B30F800201C2B /* Document.swift in Sources */,
 				B51F475029407A5000BE0016 /* ChatVC.swift in Sources */,
-				B5D6F8FF2951B2A5008BDD60 /* WelcomeRouterInput.swift in Sources */,
 				B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */,
 				B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */,
 				B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */,
 				B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */,
 				B51F475529407B5A00BE0016 /* Model.swift in Sources */,
-				B584900629574279003D176D /* AuthViewInput.swift in Sources */,
 				B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */,
 				B58490002956EA4E003D176D /* AlertBuilder.swift in Sources */,
 				B51F47772940BD1E00BE0016 /* Entity.swift in Sources */,
 				B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */,
-				B51F477A2940C0AF00BE0016 /* RegRouterInput.swift in Sources */,
-				B51F47722940BC9A00BE0016 /* RegInteractorOutput.swift in Sources */,
 				B589D6A3293F6B1E00A0EEF2 /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -90,6 +90,7 @@ final class VerificationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateForViewDidAppear()
+        self.view.backgroundColor = .green
     }
     
     @objc

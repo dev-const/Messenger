@@ -7,7 +7,6 @@ protocol WelcomeViewOutputProtocol: AnyObject {
     var view: WelcomeViewInputProtocol? { get set }
     var router: WelcomeRouterInputProtocol! { get set }
 
-    func viewDidLoad()
     func presentRegVC()
     func presentAuthVC()
 }
@@ -20,17 +19,11 @@ final class WelcomePresenter: WelcomeViewOutputProtocol {
     var router: WelcomeRouterInputProtocol!
 
 
-    @objc
     func presentRegVC() {
-        router.presentRegVC()
+        router.pushRegVC()
     }
 
-    @objc
     func presentAuthVC() {
-        router.presentAuthVC()
-    }
-
-    func viewDidLoad() {
-
+        router.pushAuthVC()
     }
 }

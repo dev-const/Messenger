@@ -66,33 +66,38 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
-        
         setConstraints()
         signUpButton.addTarget(self, action: #selector(presentRegVC), for: .touchUpInside)
         logInButton.addTarget(self, action: #selector(presentAuthVC), for: .touchUpInside)
-        
-        view.backgroundColor = .white
     }
     
+    //MARK: ViewDidAppear
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateForViewDidAppear()
     }
+    //MARK: ViewWillDisappear
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animateForViewWillDisappear()
+    }
     
     @objc
     func presentRegVC(viewController: RegistrationViewController) {
-        animateForViewWillDisappear()
         presenter.presentRegVC()
     }
     
     @objc
     func presentAuthVC(viewController: AuthorizationViewController) {
-        animateForViewWillDisappear()
         presenter.presentAuthVC()
     }
-    
-    //MARK: Animate functions
+}
+
+//MARK: Extension - Animate functions
+
+extension WelcomeViewController {
     
     private func animateForViewDidAppear() {
         
@@ -131,7 +136,7 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     }
 }
 
-//MARK: Create constraints
+//MARK: Extension - Create constraints
 
 extension WelcomeViewController {
     
@@ -154,15 +159,17 @@ extension WelcomeViewController {
         infoAppVersion.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            messengerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            messengerLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            messengerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            messengerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            messengerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             greetingLabel.topAnchor.constraint(equalTo: messengerLabel.bottomAnchor, constant: 20),
             greetingLabel.leadingAnchor.constraint(equalTo: messengerLabel.leadingAnchor),
+            greetingLabel.trailingAnchor.constraint(equalTo: messengerLabel.trailingAnchor),
 
             callToActionLabel.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 0),
             callToActionLabel.leadingAnchor.constraint(equalTo: greetingLabel.leadingAnchor),
-            callToActionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
+            callToActionLabel.trailingAnchor.constraint(equalTo: greetingLabel.trailingAnchor),
             
             letterImageView.topAnchor.constraint(equalTo: callToActionLabel.bottomAnchor, constant: 20),
             letterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

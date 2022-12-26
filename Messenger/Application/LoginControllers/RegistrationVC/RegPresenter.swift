@@ -28,6 +28,8 @@ final class RegPresenter {
     var interactor: RegInteractorInputProtocol!
     var router: RegRouterInputProtocol!
     
+    private var userNameIsCorrect = false /* false - on default */
+    private var userPhoneNumberIsCorrect = false /* false - on default */
 }
 
 //MARK: RegViewOutputProtocol
@@ -65,6 +67,4 @@ extension RegPresenter: RegInteractorOutputProtocol {
     func didReceiveError(error: AlertMessages.RawValue) {
         
     }
-    
-    
 }

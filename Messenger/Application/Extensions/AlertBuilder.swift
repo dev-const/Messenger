@@ -26,6 +26,7 @@ class CustomAlert: AlertBuilder {
 enum AlertMessages: String {
     case failedToGetData = "Failed to get data"
     case failedToSendData = "Failed to send data"
+    case failedToCheckData = "Failed to check data"
     case checkYourInternetConnection = "Check your internet connection"
     case ok = "OK"
 }

@@ -4,10 +4,10 @@ import Foundation
 
 protocol WelcomeRouterInputProtocol: AnyObject {
     
-    var viewController: WelcomeViewController? { get set }
+    var viewController: WelcomeViewController? { get }
     
-    func presentRegVC()
-    func presentAuthVC()
+    func pushRegVC()
+    func pushAuthVC()
 }
 
 //MARK: Router
@@ -16,13 +16,11 @@ final class WelcomeRouter: WelcomeRouterInputProtocol {
     
     weak var viewController: WelcomeViewController?
     
-    func presentRegVC() {
-        self.viewController?.present(RegAssembly.build(), animated: true)
+    func pushRegVC() {
+        self.viewController?.navigationController?.pushViewController(RegistrationViewController(), animated: false)
     }
     
-    func presentAuthVC() {
-        self.viewController?.present(AuthorizationViewController(), animated: true, completion: {
-//            AuthAssembly.build()
-        })
+    func pushAuthVC() {
+        self.viewController?.navigationController?.pushViewController(AuthorizationViewController(), animated: false)
     }
 }

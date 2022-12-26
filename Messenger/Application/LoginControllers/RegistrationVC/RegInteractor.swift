@@ -7,30 +7,22 @@ protocol RegInteractorInputProtocol: AnyObject {
     var presenter: RegInteractorOutputProtocol? { get }
     
     func obtainFormattedString(_ string: String)
-    func sendUserInfo()
-    func changeStatusIsLogin(status: Bool)
+    func changeStatusIsSignIn(status: Bool)
 }
 
 //MARK: Interactor
 
-final class RegInteractor {    
+final class RegInteractor: RegInteractorInputProtocol {
     
     weak var presenter: RegInteractorOutputProtocol?
-    
-    func sendUserInfo() {
+
+    func obtainFormattedString(_ string: String) {
         
     }
-}
-
-
-//MARK: RegInteractorInputProtocol
-
-extension RegInteractor: RegInteractorInputProtocol {
-    func obtainFormattedString(_ string: String) {
-
-     }
     
-    func changeStatusIsLogin(status: Bool) {
-        UserDefaults().set(true, forKey: "isLogin")
+    func changeStatusIsSignIn(status: Bool) {
+        func changeStatusIsSignIn(status: Bool) {
+            UserDefaults().set(true, forKey: "isSignIn")
+        }
     }
 }

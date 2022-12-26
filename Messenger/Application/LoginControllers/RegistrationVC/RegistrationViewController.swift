@@ -27,17 +27,6 @@ final class RegistrationViewController: UIViewController {
     
     //MARK: Create UI objects
     
-    private lazy var closeButton: UIButton = {
-        let frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-        let button = UIButton(frame: frame)
-        let image = UIImage(systemName: "xmark")
-        button.setImage(image, for: .normal)
-        button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
-        button.contentMode = .scaleAspectFill
-        button.alpha = 0
-        return button
-    }()
-    
     private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
         label.text = "Введите свои данные для получения доступа"
@@ -115,9 +104,7 @@ final class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setConstraints()
-        view.backgroundColor = .white
         userNameTF.delegate = self
         phoneNumberTF.delegate = self
         
@@ -127,8 +114,12 @@ final class RegistrationViewController: UIViewController {
     
     @objc
     func signIn() {
-        animateForViewWillDisappear()
-//        presenter
+        presenter.router.presentChatListVC()
+    }
+    
+    @objc
+    func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     //MARK: ViewDidAppear
@@ -138,7 +129,65 @@ final class RegistrationViewController: UIViewController {
         animateForViewDidAppear()
     }
     
-    //MARK: Animate functions
+    //MARK: ViewWillDisappear
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animateForViewWillDisappear()
+    }
+}
+
+//MARK: Extension - RegViewInputProtocol
+
+extension RegistrationViewController: RegViewInputProtocol {
+    
+    func didIncorrectUserNameLabel() {
+        incorrectUserNameLabel.isHidden = false
+    }
+    
+    func didIncorrectPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = false
+    }
+    
+    func correctUserNameLabel() {
+        incorrectUserNameLabel.isHidden = true
+    }
+    
+    func correctPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = true
+    }
+    
+    func presentErrorAlert() {
+        let alertVC = CustomAlert.createAlert(title: AlertMessages.failedToSendData.rawValue,
+                                   message: AlertMessages.checkYourInternetConnection.rawValue,
+                                   actionTitle: AlertMessages.ok.rawValue)
+        self.present(alertVC, animated: true)
+    }
+}
+
+//MARK: Extension - UITextFieldDelegate
+
+extension RegistrationViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == phoneNumberTF {
+            let fullString = (textField.text ?? "") + string
+            textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//            textField.resignFirstResponder()
+            return true
+        }
+}
+
+//MARK: Extension - Animate functions
+
+extension RegistrationViewController {
     
     private func animateForViewDidAppear() {
         
@@ -175,70 +224,14 @@ final class RegistrationViewController: UIViewController {
             self.licenseAgreementLabel.alpha = 0
         }
     }
-    
-    //MARK: Settings keyboard
-    
-    @objc func hideKeyboard() {
-        self.view.endEditing(true)
-    }
-    
 }
 
-//MARK: RegViewInputProtocol
-
-extension RegistrationViewController: RegViewInputProtocol {
-    
-    func didIncorrectUserNameLabel() {
-        incorrectUserNameLabel.isHidden = false
-    }
-    
-    func didIncorrectPhoneNumberLabel() {
-        incorrectPhoneNumberLabel.isHidden = false
-    }
-    
-    func correctUserNameLabel() {
-        incorrectUserNameLabel.isHidden = true
-    }
-    
-    func correctPhoneNumberLabel() {
-        incorrectPhoneNumberLabel.isHidden = true
-    }
-    
-    func presentErrorAlert() {
-        let alertVC = CustomAlert.createAlert(title: AlertMessages.failedToSendData.rawValue,
-                                   message: AlertMessages.checkYourInternetConnection.rawValue,
-                                   actionTitle: AlertMessages.ok.rawValue)
-        self.present(alertVC, animated: true)
-    }
-}
-
-//MARK: UITextFieldDelegate
-
-extension RegistrationViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if textField == phoneNumberTF {
-            let fullString = (textField.text ?? "") + string
-            textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
-            return false
-        }
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//            textField.resignFirstResponder()
-            return true
-        }
-}
-
-//MARK: Create constraints
+//MARK: Extension - Create constraints
 
 extension RegistrationViewController {
     
     private func setConstraints() {
         
-        view.addSubview(closeButton)
         view.addSubview(promptLabel)
         view.addSubview(letterImageView)
         view.addSubview(userNameTF)
@@ -248,7 +241,6 @@ extension RegistrationViewController {
         view.addSubview(signInButton)
         view.addSubview(licenseAgreementLabel)
         
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
         letterImageView.translatesAutoresizingMaskIntoConstraints = false
         userNameTF.translatesAutoresizingMaskIntoConstraints = false
@@ -260,12 +252,10 @@ extension RegistrationViewController {
         
         
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
-            promptLabel.topAnchor.constraint(equalTo: closeButton.topAnchor),
+            promptLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
-            promptLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
+            promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             letterImageView.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 20),
             letterImageView.widthAnchor.constraint(equalToConstant: 200),

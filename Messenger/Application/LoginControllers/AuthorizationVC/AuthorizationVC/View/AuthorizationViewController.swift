@@ -3,30 +3,24 @@ import UIKit
 //MARK: Protocol
 
 protocol AuthViewInputProtocol: AnyObject {
-    var output: AuthViewOutputProtocol! { get }
     
-    func closeSelfVC()
-    func openNextVC()
+    var presenter: AuthViewOutputProtocol! { get }
+    
+    func didIncorrectUserNameLabel()
+    func didIncorrectPhoneNumberLabel()
+    func correctUserNameLabel()
+    func correctPhoneNumberLabel()
+    func presentErrorAlert()
+    func authorizationIsDone()
 }
 
 //MARK: ViewController
 
-final class AuthorizationViewController: UIViewController, AuthViewInputProtocol {
+final class AuthorizationViewController: UIViewController {
     
-    var output: AuthViewOutputProtocol!
+    var presenter: AuthViewOutputProtocol!
     
     //MARK: Create UI objects
-    
-    private lazy var closeButton: UIButton = {
-        let frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-        let button = UIButton(frame: frame)
-        let image = UIImage(systemName: "xmark")
-        button.setImage(image, for: .normal)
-        button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
-        button.contentMode = .scaleAspectFill
-        button.alpha = 0
-        return button
-    }()
     
     private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
@@ -96,41 +90,73 @@ final class AuthorizationViewController: UIViewController, AuthViewInputProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setConstraints()
         phoneNumberTF.delegate = self
         userNameTF.delegate = self
-        
-        closeButton.addTarget(self, action: #selector(closeSelfVC), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(openNextVC), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(sendToCheckUserInfo),
+                             for: .touchUpInside)
     }
     
     @objc
-    func closeSelfVC() {
-        animateForViewWillDisappear()
-//        output.
-    }
-    
-    @objc
-    func openNextVC() {
-        animateForViewWillDisappear()
-//        output.
+    func sendToCheckUserInfo() {
+        presenter.sendToCheckUserInfo(userName: userNameTF.text ?? "",
+                                      phoneNumber: phoneNumberTF.text ?? "")
     }
     
     //MARK: ViewDidAppear
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-      animateForViewDidAppear()
+        animateForViewDidAppear()
     }
     
+    //MARK: ViewWillDisappear
     
-    //MARK: Animate functions
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animateForViewWillDisappear()
+    }
+}
+
+//MARK: Extension - AuthViewInputProtocol
+
+extension AuthorizationViewController: AuthViewInputProtocol {
+    
+    func didIncorrectUserNameLabel() {
+        incorrectUserNameLabel.isHidden = false
+    }
+    
+    func didIncorrectPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = false
+    }
+    
+    func correctUserNameLabel() {
+        incorrectUserNameLabel.isHidden = true
+    }
+    
+    func correctPhoneNumberLabel() {
+        incorrectPhoneNumberLabel.isHidden = true
+    }
+    
+    func presentErrorAlert() {
+        let alertVC = CustomAlert.createAlert(title: AlertMessages.failedToCheckData.rawValue,
+                                message: AlertMessages.checkYourInternetConnection.rawValue,
+                                actionTitle: AlertMessages.ok.rawValue)
+        self.present(alertVC, animated: true)
+    }
+    
+    func authorizationIsDone() {
+//        presenter.
+    }  
+}
+ 
+//MARK: Extension - Animate functions
+
+extension AuthorizationViewController {
     
     private func animateForViewDidAppear() {
         
         UIView.animate(withDuration: 0.3) {
-            self.closeButton.alpha = 1.0
             self.promptLabel.alpha = 1.0
         }
         UIView.animate(withDuration: 0.5) {
@@ -148,10 +174,9 @@ final class AuthorizationViewController: UIViewController, AuthViewInputProtocol
     private func animateForViewWillDisappear() {
         
         UIView.animate(withDuration: 0.7) {
-            self.closeButton.alpha = 0
             self.promptLabel.alpha = 0
             self.letterImageView.alpha = 0
-
+            
         }
         UIView.animate(withDuration: 0.5) {
             self.userNameTF.alpha = 0
@@ -165,7 +190,7 @@ final class AuthorizationViewController: UIViewController, AuthViewInputProtocol
     }
 }
 
-//MARK: UITextFieldDelegate
+//MARK: Extension - UITextFieldDelegate
 
 extension AuthorizationViewController: UITextFieldDelegate {
     
@@ -185,13 +210,12 @@ extension AuthorizationViewController: UITextFieldDelegate {
     }
 }
 
-//MARK: Create constraints
+//MARK: Extension - Create constraints
 
 extension AuthorizationViewController {
     
     private func setConstraints() {
         
-        view.addSubview(closeButton)
         view.addSubview(promptLabel)
         view.addSubview(letterImageView)
         view.addSubview(userNameTF)
@@ -200,7 +224,6 @@ extension AuthorizationViewController {
         view.addSubview(incorrectPhoneNumberLabel)
         view.addSubview(nextButton)
         
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
         letterImageView.translatesAutoresizingMaskIntoConstraints = false
         userNameTF.translatesAutoresizingMaskIntoConstraints = false
@@ -210,12 +233,10 @@ extension AuthorizationViewController {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
-            promptLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            promptLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
-            promptLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -30),
+            promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             letterImageView.topAnchor.constraint(equalTo: promptLabel.bottomAnchor, constant: 20),
             letterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -224,7 +245,7 @@ extension AuthorizationViewController {
             
             userNameTF.topAnchor.constraint(equalTo: letterImageView.bottomAnchor, constant: 30),
             userNameTF.leadingAnchor.constraint(equalTo: promptLabel.leadingAnchor),
-            userNameTF.trailingAnchor.constraint(equalTo: closeButton.trailingAnchor),
+            userNameTF.trailingAnchor.constraint(equalTo: promptLabel.trailingAnchor),
             
             incorrectUserNameLabel.topAnchor.constraint(equalTo: userNameTF.bottomAnchor, constant: 2),
             incorrectUserNameLabel.leadingAnchor.constraint(equalTo: userNameTF.leadingAnchor),

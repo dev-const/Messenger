@@ -73,8 +73,7 @@ class CustomImageView: UIImageView {
 
 class CustomOneTimeTextField: UITextField {
     
-    init() {
-        super.init(frame: .zero)
+    init() { super.init(frame: .zero)
     }
     
     var didEnterLastDigit: ((String) -> Void)?

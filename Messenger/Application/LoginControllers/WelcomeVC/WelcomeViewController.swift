@@ -82,6 +82,7 @@ final class WelcomeViewController: UIViewController, WelcomeViewInputProtocol {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         animateForViewWillDisappear()
+
     }
     
     @objc

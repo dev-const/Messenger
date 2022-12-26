@@ -16,6 +16,6 @@ final class AuthRouter: AuthRouterInputProtocol {
     weak var viewController: AuthorizationViewController?
     
     func presentVerificationVC() {
-        self.viewController?.present(VerificationViewController(), animated: true)
+        self.viewController?.navigationController?.pushViewController(VerificationViewController(), animated: false)
     }
 }

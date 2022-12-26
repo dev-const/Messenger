@@ -13,15 +13,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let isSignIn = userDefaults.object(forKey: "isSignIn") as? Bool ?? false
         
         if isSignIn {
-            self.window?.rootViewController = ChatListViewController()
+            self.window?.rootViewController = WelcomeViewController()
         } else {
             let navigationController = UINavigationController(rootViewController: WelcomeAssembly.build())
             navigationController.navigationBar.isTranslucent = true
             self.window?.rootViewController = navigationController
-            
-//            RegAssembly.build()
-//            AuthAssembly.build()
-//            VerificationAssembly.build()
         }
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = .white

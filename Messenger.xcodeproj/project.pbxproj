@@ -38,11 +38,12 @@
 		B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */; };
 		B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */; };
 		B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */; };
-		B5E114872958B85A00414B1A /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114862958B85A00414B1A /* RegAssembly.swift */; };
 		B5E1148929598EDC00414B1A /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1148829598EDC00414B1A /* AuthInteractor.swift */; };
 		B5E1148B2959BFAC00414B1A /* ResponseMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1148A2959BFAC00414B1A /* ResponseMessages.swift */; };
 		B5E1148D2959C82700414B1A /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1148C2959C82700414B1A /* AuthRouter.swift */; };
-		B5E1148F2959CBB800414B1A /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1148E2959CBB800414B1A /* AuthAssembly.swift */; };
+		B5E114912959EEC200414B1A /* VerifPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114902959EEC200414B1A /* VerifPresenter.swift */; };
+		B5E114932959EFA000414B1A /* VerifRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114922959EFA000414B1A /* VerifRouter.swift */; };
+		B5E114952959F44400414B1A /* VerifInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114942959F44400414B1A /* VerifInteractor.swift */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
 		B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */; };
@@ -87,11 +88,12 @@
 		B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B5D6F8F32951AF74008BDD60 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		B5D6F8F52951AF80008BDD60 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
-		B5E114862958B85A00414B1A /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
 		B5E1148829598EDC00414B1A /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		B5E1148A2959BFAC00414B1A /* ResponseMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMessages.swift; sourceTree = "<group>"; };
 		B5E1148C2959C82700414B1A /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		B5E1148E2959CBB800414B1A /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		B5E114902959EEC200414B1A /* VerifPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifPresenter.swift; sourceTree = "<group>"; };
+		B5E114922959EFA000414B1A /* VerifRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifRouter.swift; sourceTree = "<group>"; };
+		B5E114942959F44400414B1A /* VerifInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifInteractor.swift; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -202,7 +204,6 @@
 				B51F47692940BC1700BE0016 /* RegPresenter.swift */,
 				B51F476C2940BC4500BE0016 /* RegInteractor.swift */,
 				B51F47732940BCD200BE0016 /* RegRouter.swift */,
-				B5E114862958B85A00414B1A /* RegAssembly.swift */,
 				B51F47762940BD1E00BE0016 /* Entity.swift */,
 			);
 			path = RegistrationVC;
@@ -258,6 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				B51F47872948D82F00BE0016 /* VerificationViewController.swift */,
+				B5E114902959EEC200414B1A /* VerifPresenter.swift */,
+				B5E114942959F44400414B1A /* VerifInteractor.swift */,
+				B5E114922959EFA000414B1A /* VerifRouter.swift */,
 			);
 			path = VerificationVC;
 			sourceTree = "<group>";
@@ -277,7 +281,6 @@
 				B584900729574308003D176D /* AuthPresenter.swift */,
 				B5E1148829598EDC00414B1A /* AuthInteractor.swift */,
 				B5E1148C2959C82700414B1A /* AuthRouter.swift */,
-				B5E1148E2959CBB800414B1A /* AuthAssembly.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,13 +494,15 @@
 				B51F4760294087F900BE0016 /* Chat.swift in Sources */,
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B5E1148929598EDC00414B1A /* AuthInteractor.swift in Sources */,
+				B5E114952959F44400414B1A /* VerifInteractor.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
 				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
 				B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */,
+				B5E114932959EFA000414B1A /* VerifRouter.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
-				B5E114872958B85A00414B1A /* RegAssembly.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
+				B5E114912959EEC200414B1A /* VerifPresenter.swift in Sources */,
 				B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */,
 				B5E1148D2959C82700414B1A /* AuthRouter.swift in Sources */,
 				B584900829574308003D176D /* AuthPresenter.swift in Sources */,
@@ -516,7 +521,6 @@
 				B51F47772940BD1E00BE0016 /* Entity.swift in Sources */,
 				B57CC500293F944E000AAE7E /* ChatListViewController.swift in Sources */,
 				B589D6A3293F6B1E00A0EEF2 /* RegistrationViewController.swift in Sources */,
-				B5E1148F2959CBB800414B1A /* AuthAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,10 +6,10 @@ protocol AuthViewInputProtocol: AnyObject {
     
     var presenter: AuthViewOutputProtocol! { get }
     
-    func didIncorrectUserNameLabel()
-    func didIncorrectPhoneNumberLabel()
-    func correctUserNameLabel()
-    func correctPhoneNumberLabel()
+    func didIncorrectUserName()
+    func didIncorrectPhoneNumber()
+    func correctUserName()
+    func correctPhoneNumber()
     func presentErrorAlert()
     func authorizationIsDone()
 }
@@ -19,7 +19,7 @@ protocol AuthViewInputProtocol: AnyObject {
 final class AuthorizationViewController: UIViewController {
     
     var presenter: AuthViewOutputProtocol!
-    
+
     //MARK: Create UI objects
     
     private lazy var promptLabel: CustomLabel = {
@@ -90,6 +90,20 @@ final class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        //FIXME: Пока не придумал как это лучше сделать
+        let router = AuthRouter()
+        let presenter = AuthPresenter()
+        let interactor = AuthInteractor()
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.router = router
+        router.viewController = self
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        
         setConstraints()
         phoneNumberTF.delegate = self
         userNameTF.delegate = self
@@ -122,19 +136,19 @@ final class AuthorizationViewController: UIViewController {
 
 extension AuthorizationViewController: AuthViewInputProtocol {
     
-    func didIncorrectUserNameLabel() {
+    func didIncorrectUserName() {
         incorrectUserNameLabel.isHidden = false
     }
     
-    func didIncorrectPhoneNumberLabel() {
+    func didIncorrectPhoneNumber() {
         incorrectPhoneNumberLabel.isHidden = false
     }
     
-    func correctUserNameLabel() {
+    func correctUserName() {
         incorrectUserNameLabel.isHidden = true
     }
     
-    func correctPhoneNumberLabel() {
+    func correctPhoneNumber() {
         incorrectPhoneNumberLabel.isHidden = true
     }
     

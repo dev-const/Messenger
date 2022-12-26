@@ -104,6 +104,19 @@ final class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //FIXME: Пока не придумал как это лучше сделать
+        let router = RegRouter()
+        let presenter = RegPresenter()
+        let interactor = RegInteractor()
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.router = router
+        router.viewController = self
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        
         setConstraints()
         userNameTF.delegate = self
         phoneNumberTF.delegate = self

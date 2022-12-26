@@ -140,7 +140,7 @@ final class EditProfileViewController: UIViewController {
         cityNameTextField.delegate = self
         bioTextView.delegate = self
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
@@ -170,7 +170,7 @@ final class EditProfileViewController: UIViewController {
     //MARK: Settings keyboard
     
     @objc private func hideKeyboard() {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     //FIXME: for only textView

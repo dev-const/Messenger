@@ -16,8 +16,6 @@ final class RegRouter: RegRouterInputProtocol {
     weak var viewController: RegistrationViewController?
     
     func presentChatListVC() {
-        self.viewController?.present(ChatListViewController(), animated: true, completion: {
-            self.viewController?.dismiss(animated: true)
-        })
+        self.viewController?.present(ChatListViewController(), animated: true)
     }
 }

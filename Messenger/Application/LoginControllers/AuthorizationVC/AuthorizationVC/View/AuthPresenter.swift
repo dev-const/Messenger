@@ -44,19 +44,19 @@ extension AuthPresenter: AuthViewOutputProtocol {
 extension AuthPresenter: AuthInteractorOutputProtocol {
 
     func successfulUserNameVerification(_ answer: ResponseMessages.RawValue) {
-        view?.correctUserNameLabel()
+        view?.correctUserName()
     }
     
     func successfulPhoneNumberVerification(_ answer: ResponseMessages.RawValue) {
-        view?.correctPhoneNumberLabel()
+        view?.correctPhoneNumber()
     }
     
     func failedUserNameVerification(_ answer: ResponseMessages.RawValue) {
-        view?.didIncorrectUserNameLabel()
+        view?.didIncorrectUserName()
     }
     
     func failedPhoneNumberVerification(_ answer: ResponseMessages.RawValue) {
-        view?.didIncorrectPhoneNumberLabel()
+        view?.didIncorrectPhoneNumber()
     }
     
     func presentVerificationVC() {

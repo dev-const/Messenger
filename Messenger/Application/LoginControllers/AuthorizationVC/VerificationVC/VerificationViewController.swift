@@ -1,21 +1,20 @@
 import UIKit
 
+//MARK: Protocol
+
+protocol VerifViewInputProtocol: AnyObject {
+    
+    var presenter: VerifViewOutputProtocol! { get }
+    func changeStatustCode(_ answer: ResponseMessages.RawValue)
+}
+
+//MARK: ViewController
+
 final class VerificationViewController: UIViewController {
     
-    private var isSuccess: Bool?
+    var presenter: VerifViewOutputProtocol!
     
     //MARK: Create UI objects
-    
-    private let backButton: UIButton = {
-        let frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-        let button = UIButton(frame: frame)
-        let image = UIImage(systemName: "arrowshape.backward")
-        button.setImage(image, for: .normal)
-        button.tintColor = UIColor(named: CustomColor.Blue.rawValue)
-        button.contentMode = .scaleAspectFill
-        button.alpha = 0
-        return button
-    }()
     
     private lazy var promptLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 26, numberOfLines: 0)
@@ -42,7 +41,7 @@ final class VerificationViewController: UIViewController {
         return textField
     }()
     
-    private lazy var incorrectCodeLabel: CustomLabel = {
+    private lazy var statusCodeLabel: CustomLabel = {
         let label = CustomLabel(font: CustomFont.RobotoLight.rawValue, fontSize: 14, numberOfLines: 1)
         label.text = "Неверный код. Для теста введите - 133337"
         label.textAlignment = .left
@@ -53,7 +52,7 @@ final class VerificationViewController: UIViewController {
     
     private lazy var okButton: CustomButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
-        let button = CustomButton(style: ButtonStyle.blue, title: "Готово")
+        let button = CustomButton(style: ButtonStyle.white, title: "Отправить заново")
         return button
     }()
     
@@ -62,65 +61,98 @@ final class VerificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //FIXME: Пока не придумал как это лучше сделать
+        let router = VerifRouter()
+        let presenter = VerifPresenter()
+        let interactor = VerifInteractor()
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.router = router
+        router.viewController = self
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        
         setConstraints()
         oneTimeCode.delegate = self
-        view.backgroundColor = .white
         oneTimeCode.layer.cornerRadius = oneTimeCode.frame.height/2
-
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         okButton.addTarget(self, action: #selector(okButtonDidPress), for: .touchUpInside)
-        backButton.addTarget(self, action: #selector(backButtonDidPress), for: .touchUpInside)
-
+        
         oneTimeCode.configure()
         oneTimeCode.didEnterLastDigit = { [weak self] code in
-            if code != "133337" {
-                print("Wrong code")
-                self?.incorrectCodeLabel.isHidden = false
-                self?.oneTimeCode.shake()
-            } else {
-                self?.isSuccess = true
-                self?.incorrectCodeLabel.text = "Правильный код"
-                self?.incorrectCodeLabel.textColor = UIColor(named: CustomColor.Green.rawValue)
-                print("Right code")
-            }
+            self?.presenter.sendToCheckCode(self?.oneTimeCode.text ?? "")
         }
     }
     
+    //MARK: Settings keyboard
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc
+    func okButtonDidPress() {
+        guard let text = oneTimeCode.text, text.count == 6 else { oneTimeCode.shake()
+            return }
+        presenter.sendToCheckCode(text)
+    }
+    
     //MARK: ViewDidAppear
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateForViewDidAppear()
-        self.view.backgroundColor = .green
+        view.backgroundColor = .white
     }
     
-    @objc
-    private func okButtonDidPress() {
-        guard let safeIsSuccess = isSuccess, safeIsSuccess else { return }
+    //MARK: ViewWillDisappear
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         animateForViewWillDisappear()
-        print("User successfully logged in")
-        //Go to next - ChatVC
-        //FIXME: UserDefaults
     }
+}
+//MARK: Extension - VerifViewInputProtocol
+
+extension VerificationViewController: VerifViewInputProtocol {
     
-    @objc
-    private func backButtonDidPress() {
-        animateForViewWillDisappear()
-        print("BackButton did pressed")
-        //Go to back VC
+    func changeStatustCode(_ answer: ResponseMessages.RawValue) {
+
+            switch answer {
+            case ResponseMessages.rightCode.rawValue:
+                DispatchQueue.main.async {
+                    self.statusCodeLabel.isHidden = false
+                    self.statusCodeLabel.text = answer
+                    self.statusCodeLabel.textColor = UIColor(named: CustomColor.Green.rawValue)
+                }
+                presenter.presentChatListVC()
+            case ResponseMessages.wrongCode.rawValue:
+                DispatchQueue.main.async {
+                    self.oneTimeCode.shake()
+                    self.statusCodeLabel.isHidden = false
+                }
+            default:
+                break
+        }
     }
-    
-    //MARK: Animate functions
+}
+
+//MARK: Extension - Animate functions
+
+extension VerificationViewController {
     
     private func animateForViewDidAppear() {
         
         UIView.animate(withDuration: 0.3) {
-            self.backButton.alpha = 1.0
             self.promptLabel.alpha = 1.0
         }
         UIView.animate(withDuration: 0.5) {
             self.verificationCode.alpha = 1.0
             self.oneTimeCode.alpha = 1.0
-            self.incorrectCodeLabel.alpha = 1.0
+            self.statusCodeLabel.alpha = 1.0
         }
         UIView.animate(withDuration: 0.7) {
             self.okButton.alpha = 1.0
@@ -131,60 +163,52 @@ final class VerificationViewController: UIViewController {
     private func animateForViewWillDisappear() {
         
         UIView.animate(withDuration: 0.7) {
-            self.backButton.alpha = 0
             self.promptLabel.alpha = 0
             self.letterImageView.alpha = 0
-
         }
         UIView.animate(withDuration: 0.5) {
             self.verificationCode.alpha = 0
             self.oneTimeCode.alpha = 0
-            self.incorrectCodeLabel.alpha = 0
+            self.statusCodeLabel.alpha = 0
         }
         UIView.animate(withDuration: 0.3) {
             self.okButton.alpha = 0
         }
     }
-    
-    
 }
 
-//MARK: UITextFieldDelegate
+//MARK: Extension - UITextFieldDelegate
 
 extension VerificationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
-//MARK: Create constraints
+//MARK: Extension - Create constraints
 
 extension VerificationViewController {
     
     private func setConstraints() {
-        view.addSubview(backButton)
         view.addSubview(promptLabel)
         view.addSubview(letterImageView)
         view.addSubview(verificationCode)
         view.addSubview(oneTimeCode)
-        view.addSubview(incorrectCodeLabel)
+        view.addSubview(statusCodeLabel)
         view.addSubview(okButton)
         
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         promptLabel.translatesAutoresizingMaskIntoConstraints = false
         letterImageView.translatesAutoresizingMaskIntoConstraints = false
         verificationCode.translatesAutoresizingMaskIntoConstraints = false
         oneTimeCode.translatesAutoresizingMaskIntoConstraints = false
-        incorrectCodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        statusCodeLabel.translatesAutoresizingMaskIntoConstraints = false
         okButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             
-            promptLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 35),
+            promptLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
@@ -202,11 +226,11 @@ extension VerificationViewController {
             oneTimeCode.trailingAnchor.constraint(equalTo: verificationCode.trailingAnchor),
             oneTimeCode.heightAnchor.constraint(equalToConstant: 60),
             
-            incorrectCodeLabel.topAnchor.constraint(equalTo: oneTimeCode.bottomAnchor, constant: 2),
-            incorrectCodeLabel.leadingAnchor.constraint(equalTo: oneTimeCode.leadingAnchor),
-            incorrectCodeLabel.trailingAnchor.constraint(equalTo: oneTimeCode.trailingAnchor),
+            statusCodeLabel.topAnchor.constraint(equalTo: oneTimeCode.bottomAnchor, constant: 2),
+            statusCodeLabel.leadingAnchor.constraint(equalTo: oneTimeCode.leadingAnchor),
+            statusCodeLabel.trailingAnchor.constraint(equalTo: oneTimeCode.trailingAnchor),
             
-            okButton.topAnchor.constraint(equalTo: incorrectCodeLabel.bottomAnchor, constant: 35),
+            okButton.topAnchor.constraint(equalTo: statusCodeLabel.bottomAnchor, constant: 10),
             okButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
             okButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue)
         ])

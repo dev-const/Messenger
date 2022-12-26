@@ -4,8 +4,8 @@ import Foundation
 
 protocol WelcomeViewOutputProtocol: AnyObject {
     
-    var view: WelcomeViewInputProtocol? { get set }
-    var router: WelcomeRouterInputProtocol! { get set }
+    var view: WelcomeViewInputProtocol? { get }
+    var router: WelcomeRouterInputProtocol! { get }
 
     func presentRegVC()
     func presentAuthVC()

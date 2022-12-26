@@ -15,8 +15,8 @@ protocol AuthInteractorInputProtocol: AnyObject {
 final class AuthInteractor: AuthInteractorInputProtocol {
     
     weak var presenter: AuthInteractorOutputProtocol!
-    var isCorrectUserName = false /* false - on default */
-    var isCorrectPhoneNumber = false  /* false - on default */
+    private var isCorrectUserName = false /* false - on default */
+    private var isCorrectPhoneNumber = false  /* false - on default */
     
     func checkUserName(_ userName: String) {
 //        guard !userName.isEmpty else { return }

@@ -4,7 +4,7 @@ import Foundation
 
 protocol AuthRouterInputProtocol {
     
-    var viewController: AuthorizationViewController? { get }
+    var view: AuthorizationViewController? { get }
     
     func presentVerificationVC()
 }
@@ -13,9 +13,9 @@ protocol AuthRouterInputProtocol {
 
 final class AuthRouter: AuthRouterInputProtocol {
     
-    weak var viewController: AuthorizationViewController?
+    weak var view: AuthorizationViewController?
     
     func presentVerificationVC() {
-        self.viewController?.navigationController?.pushViewController(VerificationViewController(), animated: false)
+        self.view?.navigationController?.pushViewController(VerifAssembly.buildModule(), animated: false)
     }
 }

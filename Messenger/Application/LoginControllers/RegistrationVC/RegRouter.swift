@@ -4,7 +4,7 @@ import Foundation
 
 protocol RegRouterInputProtocol: AnyObject {
     
-    var viewController: RegistrationViewController? { get }
+    var view: RegistrationViewController? { get }
    
     func presentChatListVC()
 }
@@ -13,9 +13,10 @@ protocol RegRouterInputProtocol: AnyObject {
 
 final class RegRouter: RegRouterInputProtocol {
     
-    weak var viewController: RegistrationViewController?
+    weak var view: RegistrationViewController?
     
     func presentChatListVC() {
-        self.viewController?.present(ChatListViewController(), animated: true)
+        self.view?.present(ChatListViewController(),
+                           animated: true)
     }
 }

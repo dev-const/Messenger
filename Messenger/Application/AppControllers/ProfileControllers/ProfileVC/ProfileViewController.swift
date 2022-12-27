@@ -1,6 +1,17 @@
 import UIKit
 
+//MARK: Protocol
+
+protocol ProfileViewInputProtocol: AnyObject {
+    
+    var presenter: ProfileViewOutputProtocol! { get }
+}
+
+//MARK: ViewController
+
 final class ProfileViewController: UIViewController {
+    
+    var presenter: ProfileViewOutputProtocol!
     
     //MARK: Create UI objects
     
@@ -116,7 +127,12 @@ final class ProfileViewController: UIViewController {
     }
 }
 
-//MARK: Create constraints
+//MARK: Extension - ProfileViewInputProtocol
+extension ProfileViewController: ProfileViewInputProtocol {
+    
+}
+
+//MARK: Extension - Create constraints
 
 extension ProfileViewController {
     

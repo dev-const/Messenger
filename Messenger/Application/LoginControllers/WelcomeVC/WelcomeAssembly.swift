@@ -2,7 +2,7 @@ import UIKit
 
 final class WelcomeAssembly {
     
-    static func build() -> WelcomeViewController {
+    static func buildModule() -> WelcomeViewController {
         let viewController = WelcomeViewController()
         let router = WelcomeRouter()
         let presenter = WelcomePresenter()
@@ -10,7 +10,7 @@ final class WelcomeAssembly {
         viewController.presenter = presenter
         presenter.view = viewController
         presenter.router = router
-        router.viewController = viewController
+        router.view = viewController
         
         return viewController
     }

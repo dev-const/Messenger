@@ -1,8 +1,25 @@
 import UIKit
 
-final class EditProfileViewController: UIViewController {
+//MARK: EditProfileViewInputProtocol
+
+protocol EditProfileViewInputProtocol: AnyObject {
+    var presenter: EditProfileViewOutputProtocol! { get }
+}
+
+//MARK: EditProfileViewController
+
+final class EditProfileViewController: UIViewController, UINavigationControllerDelegate {
+    
+    var presenter: EditProfileViewOutputProtocol!
     
     //MARK: Create UI objects
+    
+    private lazy var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        return imagePicker
+    }()
     
     private lazy var backButton: UIButton = {
         let frame = CGRect(origin: .zero, size: CGSize(width: 60, height: 60))
@@ -139,14 +156,14 @@ final class EditProfileViewController: UIViewController {
         nickNameTextField.delegate = self
         cityNameTextField.delegate = self
         bioTextView.delegate = self
+        imagePicker.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-        
         
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
-
+        
     }
     
     //MARK: Functions for target
@@ -158,8 +175,7 @@ final class EditProfileViewController: UIViewController {
     
     @objc
     private func changePhotoButtonPressed() {
-        print("ChangePhoto button did pressed")
-        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @objc
@@ -176,7 +192,7 @@ final class EditProfileViewController: UIViewController {
     //FIXME: for only textView
     
     private func createNotifications() {
-
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
                                                name:  UITextView.keyboardWillShowNotification,
@@ -188,14 +204,14 @@ final class EditProfileViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-                    
-            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                if view.frame.origin.y == 0 {
-                    self.view.frame.origin.y -= keyboardSize.height
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
             }
         }
     }
-
+    
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
@@ -227,13 +243,34 @@ extension EditProfileViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: Extension - ImagePickerDelegate
+
+extension EditProfileViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let tempImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        avatarImageView.image  = tempImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+}
+
 //MARK: UITextViewDelegate
 
 extension EditProfileViewController: UITextViewDelegate{
     
 }
 
-//MARK: Create constraints
+//MARK: Extension - EditProfileViewInputProtocol
+
+extension EditProfileViewController: EditProfileViewInputProtocol {
+    
+}
+
+//MARK: Extension - Create constraints
 
 extension EditProfileViewController {
     
@@ -283,7 +320,7 @@ extension EditProfileViewController {
             backButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             saveButton.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
-            saveButton.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            saveButton.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 10),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             changePhotoButton.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -10),
@@ -292,7 +329,8 @@ extension EditProfileViewController {
             changePhotoButton.widthAnchor.constraint(equalToConstant: 55),
             
             nickNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 24),
-            nickNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
+            nickNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),
+            nickNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             nickNameTextField.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor, constant: 8),
             nickNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsForConstraints.LeftIntoView.rawValue),

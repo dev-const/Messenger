@@ -11,14 +11,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let isSignIn = userDefaults.object(forKey: "isSignIn") as? Bool ?? false
+      
+//        if isSignIn {
+//            self.window?.rootViewController = ChatListViewController()
+//        } else {
+//            let navigationController = UINavigationController(rootViewController: WelcomeAssembly.buildModule())
+//            navigationController.navigationBar.isTranslucent = true
+//            self.window?.rootViewController = navigationController
+//        }
         
-        if isSignIn {
-            self.window?.rootViewController = WelcomeViewController()
-        } else {
-            let navigationController = UINavigationController(rootViewController: WelcomeAssembly.build())
-            navigationController.navigationBar.isTranslucent = true
-            self.window?.rootViewController = navigationController
-        }
+        let navigationController = UINavigationController(rootViewController: EditProfileAssembly.buildModule())
+        navigationController.navigationBar.isTranslucent = true
+        self.window?.rootViewController = navigationController
+        
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = .white
     }

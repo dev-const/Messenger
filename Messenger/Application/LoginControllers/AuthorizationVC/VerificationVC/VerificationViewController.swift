@@ -51,7 +51,6 @@ final class VerificationViewController: UIViewController {
     }()
     
     private lazy var okButton: CustomButton = {
-        let frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
         let button = CustomButton(style: ButtonStyle.white, title: "Отправить заново")
         return button
     }()
@@ -61,19 +60,6 @@ final class VerificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //FIXME: Пока не придумал как это лучше сделать
-        let router = VerifRouter()
-        let presenter = VerifPresenter()
-        let interactor = VerifInteractor()
-        
-        self.presenter = presenter
-        presenter.view = self
-        presenter.router = router
-        router.viewController = self
-        interactor.presenter = presenter
-        presenter.interactor = interactor
-        
         setConstraints()
         oneTimeCode.delegate = self
         oneTimeCode.layer.cornerRadius = oneTimeCode.frame.height/2

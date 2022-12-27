@@ -91,19 +91,6 @@ final class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        //FIXME: Пока не придумал как это лучше сделать
-        let router = AuthRouter()
-        let presenter = AuthPresenter()
-        let interactor = AuthInteractor()
-        
-        self.presenter = presenter
-        presenter.view = self
-        presenter.router = router
-        router.viewController = self
-        interactor.presenter = presenter
-        presenter.interactor = interactor
-        
         setConstraints()
         phoneNumberTF.delegate = self
         userNameTF.delegate = self

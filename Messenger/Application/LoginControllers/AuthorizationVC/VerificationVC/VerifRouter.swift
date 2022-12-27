@@ -4,7 +4,7 @@ import Foundation
 
 protocol VerifRouterInputProtocol: AnyObject {
     
-    var viewController: VerificationViewController? { get }
+    var view: VerificationViewController? { get }
     
     func openChatListVC()
 }
@@ -13,14 +13,14 @@ protocol VerifRouterInputProtocol: AnyObject {
 
 final class VerifRouter: VerifRouterInputProtocol {
     
-    weak var viewController: VerificationViewController?
+    weak var view: VerificationViewController?
     
     func openChatListVC() {
 //        self.viewController?.navigationController?.show(ChatListViewController(), sender: nil)
 //        self.viewController?.navigationController?.present(ChatListViewController(), animated: true)
 //        self.viewController?.present(ChatListViewController(), animated: true)
-        self.viewController?.navigationController?.popViewController(animated: true)
-                self.viewController?.navigationController?.pushViewController(ChatListViewController(), animated: true)
+        self.view?.navigationController?.popViewController(animated: true)
+        self.view?.navigationController?.pushViewController(ChatListAssembly.buildModule(), animated: true)
 
     }
 }

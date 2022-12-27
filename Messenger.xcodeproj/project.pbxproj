@@ -10,7 +10,7 @@
 		B51F474E2940766900BE0016 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = B51F474D2940766900BE0016 /* MessageKit */; };
 		B51F475029407A5000BE0016 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F474F29407A5000BE0016 /* ChatVC.swift */; };
 		B51F475529407B5A00BE0016 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475429407B5A00BE0016 /* Model.swift */; };
-		B51F4760294087F900BE0016 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475F294087F900BE0016 /* Chat.swift */; };
+		B51F4760294087F900BE0016 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F475F294087F900BE0016 /* ChatViewController.swift */; };
 		B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47692940BC1700BE0016 /* RegPresenter.swift */; };
 		B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F476C2940BC4500BE0016 /* RegInteractor.swift */; };
 		B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F47732940BCD200BE0016 /* RegRouter.swift */; };
@@ -44,6 +44,25 @@
 		B5E114912959EEC200414B1A /* VerifPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114902959EEC200414B1A /* VerifPresenter.swift */; };
 		B5E114932959EFA000414B1A /* VerifRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114922959EFA000414B1A /* VerifRouter.swift */; };
 		B5E114952959F44400414B1A /* VerifInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114942959F44400414B1A /* VerifInteractor.swift */; };
+		B5E11497295AC6AA00414B1A /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E11496295AC6AA00414B1A /* RegAssembly.swift */; };
+		B5E11499295AC91A00414B1A /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E11498295AC91A00414B1A /* AuthAssembly.swift */; };
+		B5E1149B295AC99E00414B1A /* VerifAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1149A295AC99E00414B1A /* VerifAssembly.swift */; };
+		B5E1149D295AD25100414B1A /* ChatListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1149C295AD25100414B1A /* ChatListPresenter.swift */; };
+		B5E1149F295AD5FA00414B1A /* ChatListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1149E295AD5FA00414B1A /* ChatListRouter.swift */; };
+		B5E114A1295AD72700414B1A /* ChatListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114A0295AD72700414B1A /* ChatListInteractor.swift */; };
+		B5E114A3295AD7E100414B1A /* ChatListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114A2295AD7E100414B1A /* ChatListAssembly.swift */; };
+		B5E114A5295ADC3D00414B1A /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114A4295ADC3D00414B1A /* ChatPresenter.swift */; };
+		B5E114A7295ADDEE00414B1A /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114A6295ADDEE00414B1A /* ChatRouter.swift */; };
+		B5E114A9295ADED900414B1A /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114A8295ADED900414B1A /* ChatInteractor.swift */; };
+		B5E114AB295ADF6600414B1A /* ChatAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114AA295ADF6600414B1A /* ChatAssembly.swift */; };
+		B5E114AD295AE5BC00414B1A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114AC295AE5BC00414B1A /* ProfilePresenter.swift */; };
+		B5E114AF295AE74900414B1A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114AE295AE74900414B1A /* ProfileRouter.swift */; };
+		B5E114B1295AECBE00414B1A /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114B0295AECBE00414B1A /* ProfileAssembly.swift */; };
+		B5E114B3295AEF9800414B1A /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114B2295AEF9800414B1A /* EditProfilePresenter.swift */; };
+		B5E114B5295AEFA300414B1A /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114B4295AEFA300414B1A /* EditProfileInteractor.swift */; };
+		B5E114B7295AEFAD00414B1A /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114B6295AEFAD00414B1A /* EditProfileRouter.swift */; };
+		B5E114B9295AEFBE00414B1A /* EditProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114B8295AEFBE00414B1A /* EditProfileAssembly.swift */; };
+		B5E114BD295B0BA000414B1A /* SenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E114BC295B0BA000414B1A /* SenderModel.swift */; };
 		B5F9AF93293F3A8000A056F5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */; };
 		B5F9AF95293F3A8000A056F5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */; };
 		B5F9AF97293F3A8000A056F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */; };
@@ -58,7 +77,7 @@
 		54BF6FB84D85E5AFCEB379BF /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		B51F474F29407A5000BE0016 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		B51F475429407B5A00BE0016 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		B51F475F294087F900BE0016 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		B51F475F294087F900BE0016 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B51F47692940BC1700BE0016 /* RegPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPresenter.swift; sourceTree = "<group>"; };
 		B51F476C2940BC4500BE0016 /* RegInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegInteractor.swift; sourceTree = "<group>"; };
 		B51F47732940BCD200BE0016 /* RegRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouter.swift; sourceTree = "<group>"; };
@@ -94,6 +113,25 @@
 		B5E114902959EEC200414B1A /* VerifPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifPresenter.swift; sourceTree = "<group>"; };
 		B5E114922959EFA000414B1A /* VerifRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifRouter.swift; sourceTree = "<group>"; };
 		B5E114942959F44400414B1A /* VerifInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifInteractor.swift; sourceTree = "<group>"; };
+		B5E11496295AC6AA00414B1A /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
+		B5E11498295AC91A00414B1A /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		B5E1149A295AC99E00414B1A /* VerifAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifAssembly.swift; sourceTree = "<group>"; };
+		B5E1149C295AD25100414B1A /* ChatListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListPresenter.swift; sourceTree = "<group>"; };
+		B5E1149E295AD5FA00414B1A /* ChatListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRouter.swift; sourceTree = "<group>"; };
+		B5E114A0295AD72700414B1A /* ChatListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListInteractor.swift; sourceTree = "<group>"; };
+		B5E114A2295AD7E100414B1A /* ChatListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListAssembly.swift; sourceTree = "<group>"; };
+		B5E114A4295ADC3D00414B1A /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		B5E114A6295ADDEE00414B1A /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		B5E114A8295ADED900414B1A /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		B5E114AA295ADF6600414B1A /* ChatAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssembly.swift; sourceTree = "<group>"; };
+		B5E114AC295AE5BC00414B1A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		B5E114AE295AE74900414B1A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		B5E114B0295AECBE00414B1A /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		B5E114B2295AEF9800414B1A /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		B5E114B4295AEFA300414B1A /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		B5E114B6295AEFAD00414B1A /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		B5E114B8295AEFBE00414B1A /* EditProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileAssembly.swift; sourceTree = "<group>"; };
+		B5E114BC295B0BA000414B1A /* SenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderModel.swift; sourceTree = "<group>"; };
 		B5F9AF87293F3A8000A056F5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B5F9AF89293F3A8000A056F5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B5F9AF8B293F3A8000A056F5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -174,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				B589D6A6293F6B8A00A0EEF2 /* ProfileViewController.swift */,
+				B5E114AC295AE5BC00414B1A /* ProfilePresenter.swift */,
+				B5E114AE295AE74900414B1A /* ProfileRouter.swift */,
+				B5E114B0295AECBE00414B1A /* ProfileAssembly.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -182,6 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				B589D6AA293F6BD600A0EEF2 /* EditProfileViewController.swift */,
+				B5E114B2295AEF9800414B1A /* EditProfilePresenter.swift */,
+				B5E114B4295AEFA300414B1A /* EditProfileInteractor.swift */,
+				B5E114B6295AEFAD00414B1A /* EditProfileRouter.swift */,
+				B5E114B8295AEFBE00414B1A /* EditProfileAssembly.swift */,
 			);
 			path = EdirProfileVC;
 			sourceTree = "<group>";
@@ -201,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B589D6A2293F6B1E00A0EEF2 /* RegistrationViewController.swift */,
+				B5E11496295AC6AA00414B1A /* RegAssembly.swift */,
 				B51F47692940BC1700BE0016 /* RegPresenter.swift */,
 				B51F476C2940BC4500BE0016 /* RegInteractor.swift */,
 				B51F47732940BCD200BE0016 /* RegRouter.swift */,
@@ -222,7 +268,10 @@
 			isa = PBXGroup;
 			children = (
 				B57CC4FF293F944E000AAE7E /* ChatListViewController.swift */,
-				B51F474F29407A5000BE0016 /* ChatVC.swift */,
+				B5E1149C295AD25100414B1A /* ChatListPresenter.swift */,
+				B5E1149E295AD5FA00414B1A /* ChatListRouter.swift */,
+				B5E114A0295AD72700414B1A /* ChatListInteractor.swift */,
+				B5E114A2295AD7E100414B1A /* ChatListAssembly.swift */,
 				B51F475429407B5A00BE0016 /* Model.swift */,
 			);
 			path = ChatList;
@@ -231,7 +280,13 @@
 		B51F47632940881A00BE0016 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				B51F475F294087F900BE0016 /* Chat.swift */,
+				B51F475F294087F900BE0016 /* ChatViewController.swift */,
+				B5E114BC295B0BA000414B1A /* SenderModel.swift */,
+				B5E114A4295ADC3D00414B1A /* ChatPresenter.swift */,
+				B5E114A6295ADDEE00414B1A /* ChatRouter.swift */,
+				B5E114A8295ADED900414B1A /* ChatInteractor.swift */,
+				B5E114AA295ADF6600414B1A /* ChatAssembly.swift */,
+				B51F474F29407A5000BE0016 /* ChatVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -262,6 +317,7 @@
 				B5E114902959EEC200414B1A /* VerifPresenter.swift */,
 				B5E114942959F44400414B1A /* VerifInteractor.swift */,
 				B5E114922959EFA000414B1A /* VerifRouter.swift */,
+				B5E1149A295AC99E00414B1A /* VerifAssembly.swift */,
 			);
 			path = VerificationVC;
 			sourceTree = "<group>";
@@ -281,6 +337,7 @@
 				B584900729574308003D176D /* AuthPresenter.swift */,
 				B5E1148829598EDC00414B1A /* AuthInteractor.swift */,
 				B5E1148C2959C82700414B1A /* AuthRouter.swift */,
+				B5E11498295AC91A00414B1A /* AuthAssembly.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,34 +545,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E11497295AC6AA00414B1A /* RegAssembly.swift in Sources */,
 				B5443963294B2F5400201C2B /* FirebaseManager.swift in Sources */,
+				B5E114B9295AEFBE00414B1A /* EditProfileAssembly.swift in Sources */,
 				B589D6AB293F6BD600A0EEF2 /* EditProfileViewController.swift in Sources */,
+				B5E114A9295ADED900414B1A /* ChatInteractor.swift in Sources */,
+				B5E114B7295AEFAD00414B1A /* EditProfileRouter.swift in Sources */,
 				B51F478329488E0C00BE0016 /* SupportConstants.swift in Sources */,
-				B51F4760294087F900BE0016 /* Chat.swift in Sources */,
+				B51F4760294087F900BE0016 /* ChatViewController.swift in Sources */,
+				B5E114A5295ADC3D00414B1A /* ChatPresenter.swift in Sources */,
+				B5E114A7295ADDEE00414B1A /* ChatRouter.swift in Sources */,
+				B5E114AF295AE74900414B1A /* ProfileRouter.swift in Sources */,
+				B5E1149D295AD25100414B1A /* ChatListPresenter.swift in Sources */,
 				B589D6A5293F6B4A00A0EEF2 /* AuthorizationViewController.swift in Sources */,
 				B5E1148929598EDC00414B1A /* AuthInteractor.swift in Sources */,
 				B5E114952959F44400414B1A /* VerifInteractor.swift in Sources */,
 				B51F47742940BCD200BE0016 /* RegRouter.swift in Sources */,
 				B589D454293F1D2E00198385 /* WelcomeViewController.swift in Sources */,
+				B5E114B1295AECBE00414B1A /* ProfileAssembly.swift in Sources */,
 				B58490022956F204003D176D /* WelcomeAssembly.swift in Sources */,
 				B5E114932959EFA000414B1A /* VerifRouter.swift in Sources */,
 				B51F476D2940BC4500BE0016 /* RegInteractor.swift in Sources */,
 				B51F477E29410F0500BE0016 /* Extensions.swift in Sources */,
+				B5E114B3295AEF9800414B1A /* EditProfilePresenter.swift in Sources */,
 				B589D450293F1D2E00198385 /* AppDelegate.swift in Sources */,
 				B5E114912959EEC200414B1A /* VerifPresenter.swift in Sources */,
 				B5D6F8F62951AF80008BDD60 /* WelcomeRouter.swift in Sources */,
+				B5E1149F295AD5FA00414B1A /* ChatListRouter.swift in Sources */,
 				B5E1148D2959C82700414B1A /* AuthRouter.swift in Sources */,
+				B5E114AD295AE5BC00414B1A /* ProfilePresenter.swift in Sources */,
 				B584900829574308003D176D /* AuthPresenter.swift in Sources */,
+				B5E11499295AC91A00414B1A /* AuthAssembly.swift in Sources */,
 				B5D6F8F42951AF74008BDD60 /* WelcomePresenter.swift in Sources */,
 				B51F47882948D82F00BE0016 /* VerificationViewController.swift in Sources */,
+				B5E114BD295B0BA000414B1A /* SenderModel.swift in Sources */,
 				B5443966294B30F800201C2B /* Document.swift in Sources */,
 				B51F475029407A5000BE0016 /* ChatVC.swift in Sources */,
+				B5E114B5295AEFA300414B1A /* EditProfileInteractor.swift in Sources */,
+				B5E114AB295ADF6600414B1A /* ChatAssembly.swift in Sources */,
+				B5E114A1295AD72700414B1A /* ChatListInteractor.swift in Sources */,
 				B589D452293F1D2E00198385 /* SceneDelegate.swift in Sources */,
 				B589D6A7293F6B8A00A0EEF2 /* ProfileViewController.swift in Sources */,
+				B5E114A3295AD7E100414B1A /* ChatListAssembly.swift in Sources */,
 				B51F476A2940BC1700BE0016 /* RegPresenter.swift in Sources */,
 				B589D45A293F1D2E00198385 /* Messenger.xcdatamodeld in Sources */,
 				B51F475529407B5A00BE0016 /* Model.swift in Sources */,
 				B5E1148B2959BFAC00414B1A /* ResponseMessages.swift in Sources */,
+				B5E1149B295AC99E00414B1A /* VerifAssembly.swift in Sources */,
 				B51F4781294878FE00BE0016 /* CustomElements.swift in Sources */,
 				B58490002956EA4E003D176D /* AlertBuilder.swift in Sources */,
 				B51F47772940BD1E00BE0016 /* Entity.swift in Sources */,

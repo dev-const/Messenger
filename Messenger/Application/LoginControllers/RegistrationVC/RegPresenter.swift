@@ -8,7 +8,7 @@ protocol RegViewOutputProtocol: AnyObject {
     var interactor: RegInteractorInputProtocol! { get }
     var router: RegRouterInputProtocol!  { get }
     
-    func userSelectedCreateAccount(userName: String, phoneNumber: String)
+    func userSelectedCreateAccount(_ userName: String?, _ phoneNumber: String?)
 }
 
 protocol RegInteractorOutputProtocol: AnyObject {
@@ -35,11 +35,10 @@ final class RegPresenter {
 //MARK: RegViewOutputProtocol
 
 extension RegPresenter: RegViewOutputProtocol {
-    
-    func userSelectedCreateAccount(userName: String, phoneNumber: String) {
-        //FIXME: - change this method
-        self.presentChatListVC()
+    func userSelectedCreateAccount(_ userName: String?, _ phoneNumber: String?) {
+        interactor.checkValidate(userName, phoneNumber)
     }
+    //        self.presentChatListVC()
 }
 
 

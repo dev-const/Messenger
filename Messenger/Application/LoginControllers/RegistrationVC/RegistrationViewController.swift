@@ -115,7 +115,7 @@ final class RegistrationViewController: UIViewController {
     
     @objc
     func signIn() {
-        presenter.router.presentChatListVC()
+        presenter.userSelectedCreateAccount(userNameTF.text, phoneNumberTF.text)
     }
     
     @objc

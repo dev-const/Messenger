@@ -160,26 +160,26 @@ final class EditProfileViewController: UIViewController, UINavigationControllerD
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
-        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
-        changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backButtonDidPressed), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveButtonDidPressed), for: .touchUpInside)
+        changePhotoButton.addTarget(self, action: #selector(changePhotoButtonDidPressed), for: .touchUpInside)
         
     }
     
     //MARK: Functions for target
     
     @objc
-    private func backButtonPressed() {
+    private func backButtonDidPressed() {
         print("Back button did pressed")
     }
     
     @objc
-    private func changePhotoButtonPressed() {
+    private func changePhotoButtonDidPressed() {
         present(imagePicker, animated: true, completion: nil)
     }
     
     @objc
-    private func saveButtonPressed() {
+    private func saveButtonDidPressed() {
         print("Save button did pressed")
     }
     
@@ -215,7 +215,6 @@ final class EditProfileViewController: UIViewController, UINavigationControllerD
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
-    
     deinit {
         NotificationCenter.default.removeObserver(self,
                                                   name: UITextView.keyboardWillShowNotification,
@@ -260,7 +259,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 
 //MARK: UITextViewDelegate
 
-extension EditProfileViewController: UITextViewDelegate{
+extension EditProfileViewController: UITextViewDelegate {
     
 }
 
@@ -320,7 +319,7 @@ extension EditProfileViewController {
             backButton.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             saveButton.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
-            saveButton.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 10),
+            saveButton.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ConstantsForConstraints.RightIntoView.rawValue),
             
             changePhotoButton.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -10),

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>875393627502-uu2d8pk8sdftq96opq14d6t7u7fs5ob2.apps.googleusercontent.com</string>
+	<string>333529235331-ifg7ddunuuv2ll6hht8mf9hgdbghppdg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.875393627502-uu2d8pk8sdftq96opq14d6t7u7fs5ob2</string>
+	<string>com.googleusercontent.apps.333529235331-ifg7ddunuuv2ll6hht8mf9hgdbghppdg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC7PV7q_fpmLuW8YwlM8C63rIcuU7sXWlU</string>
+	<string>AIzaSyBhaWhsgpHMFjLcy4NqMsAzVLWSifYXCIk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>875393627502</string>
+	<string>333529235331</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Komigen.Messenger</string>
 	<key>PROJECT_ID</key>
-	<string>messenger-a54b6</string>
+	<string>messenger-63089</string>
 	<key>STORAGE_BUCKET</key>
-	<string>messenger-a54b6.appspot.com</string>
+	<string>messenger-63089.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:875393627502:ios:479d9205e532fa8f3b3d7f</string>
+	<string>1:333529235331:ios:4477af96e223d20db880b6</string>
 </dict>
 </plist>

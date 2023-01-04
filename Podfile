@@ -11,6 +11,7 @@ pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
 pod 'FirebaseDatabase'
+pod 'FirebaseUI', '~> 8.0'
 
 pod 'Alamofire'
 

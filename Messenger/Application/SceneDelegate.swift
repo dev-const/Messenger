@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            self.window?.rootViewController = navigationController
 //        }
         
-        let navigationController = UINavigationController(rootViewController: EditProfileAssembly.buildModule())
+        let navigationController = UINavigationController(rootViewController: RegAssembly.buildModule())
         navigationController.navigationBar.isTranslucent = true
         self.window?.rootViewController = navigationController
         
